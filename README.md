@@ -1,16 +1,25 @@
-### Hi there 👋
-- 🔭 I’m currently working on ...
-<!--
-**camanrofo34/camanrofo34** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# Sobre mí
 
-Here are some ideas to get you started:
+Soy Camilo Andrés Rodríguez Forero, tengo 17 años de edad. Soy un desarrollador de software apasionado por la tecnología.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Habilidades
+
+* **Lenguajes de programación:**
+    * [Imágenes de los lenguajes de programación que manejas]
+* **Herramientas y frameworks:**
+    * [Imágenes de las herramientas y frameworks que manejas]
+* **Bases de datos:**
+    * [Imágenes de las bases de datos que manejas]
+
+## Experiencia
+
+* [Lista de tus proyectos o experiencias relevantes]
+
+## Contacto
+
+* [Tus enlaces a redes sociales]
+
+## Acerca de este README
+
+Este README fue creado para proporcionar información sobre mí y mis habilidades. Si tienes alguna pregunta, no dudes en contactarme.
+
