@@ -5,7 +5,7 @@ Soy Camilo Andrés Rodríguez Forero, tengo 17 años de edad. Soy un desarrollad
 ## Habilidades
 
 * **Lenguajes de programación:**
-    * [Imágenes de los lenguajes de programación que manejas]
+    (python.png) (c++.png) (javascript.png) (java.png) (php.png)
 * **Herramientas y frameworks:**
     * [Imágenes de las herramientas y frameworks que manejas]
 * **Bases de datos:**
