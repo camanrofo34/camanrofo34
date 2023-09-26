@@ -10,12 +10,16 @@ Soy Camilo Andrés Rodríguez Forero, tengo 17 años de edad. Soy un desarrollad
         <img src="javascript.png" alt="Javascript" width="75">
         <img src="java.png" alt="Java" width="75">
         <img src="php.png" alt="PHP" width="75">
-
+        <img src="C#.png" alt="C#" width="75">
+        <img src="bash.png" alt="bash" width="75">
+        <img src="sql.png" alt="sql" width="75">
 
 * **Herramientas y frameworks:**
-    * [Imágenes de las herramientas y frameworks que manejas]
+        <img src="AndroidStudio.png" alt="AS" width="75">
+        <img src="Bootstrap.png" alt="BS" width="75">
+        <img src="django.png" alt="django" width="75">
 * **Bases de datos:**
-    * [Imágenes de las bases de datos que manejas]
+        <img src="managementsql.jng" alt="sqlms#" width="75">
 
 ## Experiencia
 
