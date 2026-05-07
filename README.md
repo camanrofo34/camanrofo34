@@ -1,33 +1,108 @@
-<img src="https://raw.githubusercontent.com/BEPb/BEPb/5c63fa170d1cbbb0b1974f05a3dbe6aca3f5b7f3/assets/Bottom_up.svg" width="100%" />
-<h1 align="center">Hi 👋, I' Camilo Rodríguez </h1>
-<h3 align="center">I am an 19 years old student that is apassionated with programming </h3>
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=CaRf&label=Profile%20views&color=0e75b6&style=flat" alt="CaRf" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=CaRf&theme=" alt="CaRf" /></a> </p>
+<h1 align="center">
+  Hi there, I'm Camilo Rodríguez 👋
+</h1>
 
-<div> <a href="https://www.linkedin.com/in/Camilo Rodríguez " target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-<a href="https://github.com/CaRf" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" target="_blank"></a>
-</div><h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/Camilo Rodríguez " target="blank"><img align="center" src="https://raw.githubusercontent.com/teamedwardforever/Readme-Generator/71f25dd8b98329b168142a6b782a107b75eab178/svg/Social/linked-in-alt.svg" alt="Camilo Rodríguez " height="30" width="40" /></a></p>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=1000&color=4FA3E0&center=true&vCenter=true&width=600&lines=Software+Engineer+%7C+Java+%2B+Spring+Boot;ICPC+North+South+America+Finalist;React+%7C+React+Native+%7C+Expo;Python+%7C+Analytics+%7C+AI+Servers;Spec+Driven+Development" alt="Typing SVG" />
+</p>
 
-<h3 align="left">Stars</h3>
-<img align="left" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=camanrofo34&layout=compact&theme=" alt=camanrofo34 />
+<p align="center">
+  <a href="www.linkedin.com/in/camilo-rodriguez-62b646264" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  
+  <a href="https://github.com/camanrofo34" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-0d1b2a?style=for-the-badge&logo=github&logoColor=4fa3e0" />
+  </a>
+  
+  <img src="https://komarev.com/ghpvc/?username=camanrofo34&label=Profile%20views&color=0d1b2a&labelColor=1a2f47&style=for-the-badge" alt="Profile views" />
+</p>
 
-<p>&nbsp;<img align="center" height="180em" src="https://github-readme-stats.vercel.app/api?username=camanrofo34&show_icons=true&locale=en&theme=shades-of-purple" alt="camanrofo34" /></p>
+---
 
-<p><img align="center" height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=camanrofo34&theme=shades-of-purple" alt="camanrofo34" /></p>
+## 🧑‍💻 About me
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"><h3 align="center">Statistics</h3>
-<div align="center">
-<a href="https://github.com/CaRf">
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=camanrofo34&theme=2077" height="180em" />
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=camanrofo34&theme=2077" height="180em" />
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=camanrofo34&theme=2077" height="180em" />
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=camanrofo34&theme=2077" height="180em" />
-<img align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=camanrofo34&theme=2077" height="180em" />
-</div>
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"><h2 align="left">⚡Activity Graph:</h2>
-<img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=camanrofo34&theme=xcode"/>
+I'm a software engineering student from Colombia 🇨🇴, passionate about building real, production-grade software. My focus is on backend development with **Java & Spring Boot**, but I enjoy the full stack — from mobile apps to AI-powered servers.
 
-<img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" />
+- 🔭 Currently building web apps with Spring Boot and AI servers with Python
+- 📐 I practice **Spec Driven Development** for clean, contract-first architecture
+- 🏆 **ICPC North South America Regional Finalist** — competitive programming with C++ and Python
+- 🌎 Open to remote collaboration
+
+---
+
+## 🏆 ICPC Achievement
+
+> Competed in the **ICPC North South America Regional Finals** — one of the world's most prestigious collegiate programming contests. This experience sharpened my algorithmic thinking, problem-solving under pressure, and proficiency in **C++** and **Python**.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ICPC-North%20South%20America%20Finalist-f5c842?style=for-the-badge&labelColor=1a2f47&color=f5c842&logoColor=white" />
+</p>
+
+---
+
+## ⚙️ Tech Stack
+
+### 🔵 Backend — Main Focus
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+
+### ⚛️ Frontend & Mobile
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+
+### 🤖 Data & AI
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B)
+![Analytics](https://img.shields.io/badge/Analytics-86efac?style=for-the-badge&logoColor=white)
+![AI Servers](https://img.shields.io/badge/AI_Servers-c084fc?style=for-the-badge&logoColor=white)
+
+### ⚡ Competitive Programming
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+
+---
+
+## 📊 GitHub Statistics
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=camanrofo34&theme=midnight-purple&hide_border=true&background=0d1b2a&stroke=1a2f47&ring=4fa3e0&fire=78bfef&currStreakLabel=4fa3e0&border_radius=8" alt="Streak Stats" />
+</p>
+
+---
+
+## 🗂️ Profile Summary
+
+<p align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=camanrofo34&theme=2077" height="160em" />
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=camanrofo34&theme=2077" height="160em" />
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=camanrofo34&theme=2077" height="160em" />
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=camanrofo34&theme=2077&utcOffset=-5" height="160em" />
+</p>
+<p align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=camanrofo34&theme=2077" width="100%" />
+</p>
+
+---
+
+## ⚡ Activity Graph
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=camanrofo34&theme=tokyo-night&bg_color=0d1b2a&color=4fa3e0&line=78bfef&point=ffffff&area=true&hide_border=true" width="100%" />
+</p>
+
+---
+
+## 🏅 Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=camanrofo34&theme=darkhub&no-frame=true&column=7&margin-w=8" />
+</p>
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" width="100%" />
+</p>
