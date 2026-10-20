@@ -2,7 +2,7 @@
 <!-- HEADER / HERO BANNER -->
 <!-- ===================================================================== -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0:0a0f1d,45:0f172a,75:0369a1,100:38bdf8&height=220&section=header&text=Camilo%20Andr%C3%A9s%20Rodr%C3%ADguez&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=Software%20Engineer%20%E2%80%A2%20Full-Stack%20%26%20Cloud%20Developer%20%E2%80%A2%202x%20ICPC%20Finalist&descFontSize=19&descAlignY=60&descAlign=50" width="100%" alt="Camilo Andrés Rodríguez Forero Header Banner" />
+  <img src="https://capsule-render.vercel.app/api?type=wave&color=0:0b1120,100:0284c7&height=200&section=header&text=Camilo%20Andres%20Rodriguez&fontSize=40&fontColor=ffffff&fontAlignY=40&desc=Software%20Engineer%20-%20Full-Stack%20and%20Cloud%20Developer%20-%202x%20ICPC%20Finalist&descSize=18&descAlignY=62" width="100%" alt="Camilo Andrés Rodríguez Forero Header Banner" />
 </div>
 
 <!-- TYPING ANIMATION -->
@@ -180,13 +180,13 @@ Final-year **Systems and Informatics Engineering** student at **Universidad Pont
 <br />
 
 <!-- ===================================================================== -->
-<!-- LIVE CONTRIBUTION ACTIVITY & SNAKE -->
+<!-- LIVE CONTRIBUTION ACTIVITY & HEATMAP (DARK MODE) -->
 <!-- ===================================================================== -->
 ## ⚡ Live Contribution Activity
 
 <div align="center">
   <a href="https://github.com/camanrofo34">
-    <img src="https://ghchart.rshah.org/0284c7/camanrofo34" alt="Camilo's Live Contribution Heatmap" width="100%" />
+    <img src="https://github-contribution-merger.apoorvdarshan.com/api/merge?users=camanrofo34&theme=github-dark" alt="Camilo's Dark Mode Contribution Calendar" width="100%" />
   </a>
 </div>
 
@@ -255,5 +255,5 @@ Have an exciting challenge, open position, research initiative, or project colla
 <!-- FOOTER WAVE -->
 <!-- ===================================================================== -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0:0a0f1d,45:0f172a,75:0369a1,100:38bdf8&height=120&section=footer" width="100%" alt="Footer Wave" />
+  <img src="https://capsule-render.vercel.app/api?type=wave&color=0:0b1120,100:0284c7&height=120&section=footer" width="100%" alt="Footer Wave" />
 </div>
