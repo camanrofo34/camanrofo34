@@ -1,0 +1,44 @@
+name: Sync Persona 3 Reload Profile
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "p3r.config.json"
+      - "scripts/**"
+  schedule:
+    # Daily sync at 06:00 UTC
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate Persona 3 Reload SVG Assets
+        run: |
+          python3 scripts/gen_p3r_profile.py
+
+      - name: Commit and push changes if any
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/p3r/
+          if git diff --staged --quiet; then
+            echo "No changes in P3R assets."
+          else
+            git commit -m "ci(p3r): auto-sync generated persona 3 reload svg assets [skip ci]"
+            git push
+          fi
