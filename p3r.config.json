@@ -1,15 +1,15 @@
 {
   "user": {
-    "name": "CAMILO ANDRÉS RODRÍGUEZ",
+    "name": "Camilo Rodríguez",
     "handle": "camanrofo34",
-    "title": "SOFTWARE ENGINEER // FULL-STACK & CLOUD",
-    "status": "INITIALIZED // LEVEL 99",
+    "title": "SOFTWARE ENGINEER",
+    "status": "SYS://READY",
     "location": "Bucaramanga, Colombia 🇨🇴",
     "gpa": "4.93 / 5.0",
     "university": "Universidad Pontificia Bolivariana (UPB)",
     "degree": "Systems & Informatics Engineering",
     "motto": "MEMENTO MORI // CARPE DIEM",
-    "arcana": "THE CHARIOT // ALGORITHMIC LOGIC"
+    "arcana": "THE CHARIOT"
   },
   "stats": [
     { "label": "LV", "val": "99" },

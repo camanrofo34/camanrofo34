@@ -13,7 +13,7 @@
 <!-- [00] P3R HERO // WATER SPLASH HUD BANNER -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/hero.svg" width="100%" alt="Camilo Andrés Rodríguez — Persona 3 Reload Status HUD" />
+  <img src="assets/p3r/hero.svg" width="100%" alt="Camilo Rodríguez — Persona 3 Reload Status HUD" />
 </p>
 
 <!-- P3R TYPING STATUS SVG -->
