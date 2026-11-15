@@ -1,0 +1,228 @@
+{
+  "user": {
+    "name": "CAMILO ANDRÉS RODRÍGUEZ",
+    "handle": "camanrofo34",
+    "title": "SOFTWARE ENGINEER // FULL-STACK & CLOUD",
+    "status": "INITIALIZED // LEVEL 99",
+    "location": "Bucaramanga, Colombia 🇨🇴",
+    "gpa": "4.93 / 5.0",
+    "university": "Universidad Pontificia Bolivariana (UPB)",
+    "degree": "Systems & Informatics Engineering",
+    "motto": "MEMENTO MORI // CARPE DIEM",
+    "arcana": "THE CHARIOT // ALGORITHMIC LOGIC"
+  },
+  "stats": [
+    { "label": "LV", "val": "99" },
+    { "label": "GPA", "val": "4.93" },
+    { "label": "ICPC", "val": "2x FINALIST" },
+    { "label": "ARCH", "val": "SPEC-DRIVEN" }
+  ],
+  "about": {
+    "summary": "Final-year Systems and Informatics Engineering student at Universidad Pontificia Bolivariana (UPB) in Colombia. Combining rigorous algorithmic problem-solving with proven industry experience delivering production applications end-to-end across cloud, distributed backends, and full-stack systems.",
+    "highlights": [
+      {
+        "category": "ACADEMIC EXCELLENCE",
+        "detail": "Honor Scholarship recipient for academic excellence with term GPAs of 4.86 / 5.0 and 4.93 / 5.0 at UPB."
+      },
+      {
+        "category": "COMPETITIVE PROGRAMMING",
+        "detail": "2x ICPC South America–North Finals competitor (2024 & 2026) with deep expertise in algorithms, data structures, and C++ / Java optimization."
+      },
+      {
+        "category": "AI & RESEARCH",
+        "detail": "Lead researcher on SEMPIA — an AI and gamified competitive programming virtual judge, distinguished as a RedColSi 2026 National Finalist."
+      },
+      {
+        "category": "INDUSTRY FULL-STACK & CLOUD",
+        "detail": "Production experience shipping enterprise cloud platforms, Kafka event-driven microservices, SAP integrations, and React Native apps on Google Play."
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "01",
+      "name": "SEMPIA — AI & GAMIFIED VIRTUAL JUDGE",
+      "tag": "AI // THESIS LEAD",
+      "role": "Lead Researcher • 2026",
+      "tech": ["Python", "Vertex AI", "Angular", "PostgreSQL", "Docker"],
+      "description": "Full competitive programming training engine featuring virtual judge verdicts, gamified challenges, rankings, and AI progressive hint generation. RedColSi 2026 National Finalist with SIINFO.",
+      "url": "https://github.com/camanrofo34",
+      "repo": "camanrofo34"
+    },
+    {
+      "id": "02",
+      "name": "PHARMACONSULTAS ENTERPRISE",
+      "tag": "FULL-STACK // PRODUCTION",
+      "role": "Full-Stack Developer • 2025–2026",
+      "tech": ["Node.js", "Angular", "React Native", "MySQL", "Google Play"],
+      "description": "Comprehensive pharmacy ecosystem: drug commerce, appointment scheduling, digital clinical records, and family subscriptions. Shipped companion React Native app on Google Play.",
+      "url": "https://github.com/camanrofo34",
+      "repo": "camanrofo34"
+    },
+    {
+      "id": "03",
+      "name": "TERRAFY — PLANT GROWTH ANALYTICS",
+      "tag": "MODELING // ANALYTICS",
+      "role": "Scientific Modeling Server",
+      "tech": ["Python", "Mathematical Modeling", "TypeScript", "REST APIs"],
+      "description": "Data-driven hydroponic plant-growth analysis and simulation platform powered by mathematical models, environmental telemetry, and analytical APIs.",
+      "url": "https://github.com/camanrofo34/terrafy-analytics-server",
+      "repo": "terrafy-analytics-server"
+    },
+    {
+      "id": "04",
+      "name": "GYM MANAGEMENT CRM",
+      "tag": "DISTRIBUTED // KAFKA",
+      "role": "EPAM Specialization Capstone • 2025",
+      "tech": ["Java 17", "Spring Boot", "Kafka", "Spring Security", "PostgreSQL"],
+      "description": "Enterprise trainee/trainer administration, secure authentication, audit logging, and weekly trainer metrics. Architected with strict Spec-Driven Development standards.",
+      "url": "https://github.com/camanrofo34/gym-crm-spec-driven-development",
+      "repo": "gym-crm-spec-driven-development"
+    },
+    {
+      "id": "05",
+      "name": "NEXUS BATTLE IV & REALTIME CHAT",
+      "tag": "MULTIPLAYER // WEBSOCKETS",
+      "role": "Multiplayer Game System",
+      "tech": ["TypeScript", "Java", "WebSockets", "Full-Stack"],
+      "description": "Tactical turn-based multiplayer battle arena featuring real-time bidirectional WebSocket chat rooms and dynamic auction bidding mechanisms.",
+      "url": "https://github.com/camanrofo34/NEXUS-BATTLE-IV",
+      "repo": "NEXUS-BATTLE-IV"
+    }
+  ],
+  "skills": [
+    {
+      "category": "BACKEND & ARCHITECTURE",
+      "icon": "⚡",
+      "items": [
+        "Java 17+",
+        "Spring Boot",
+        "Node.js",
+        "Express.js",
+        "Python",
+        "Django",
+        "Apache Kafka",
+        "Spec-Driven Dev"
+      ]
+    },
+    {
+      "category": "FRONTEND & MOBILE",
+      "icon": "📱",
+      "items": [
+        "React Native",
+        "Angular",
+        "React.js",
+        "Expo",
+        "TypeScript",
+        "JavaScript",
+        "Android Studio",
+        "Tailwind / CSS3"
+      ]
+    },
+    {
+      "category": "CLOUD & INFRASTRUCTURE",
+      "icon": "☁️",
+      "items": [
+        "AWS Certified",
+        "Google Cloud Certified",
+        "Terraform",
+        "Kubernetes",
+        "Docker",
+        "GitHub Actions",
+        "Linux / Bash"
+      ]
+    },
+    {
+      "category": "DATABASES & ENTERPRISE",
+      "icon": "🗄️",
+      "items": [
+        "MySQL",
+        "PostgreSQL",
+        "SQLite",
+        "SAP Integration",
+        "RESTful APIs",
+        "OpenAPI / Swagger"
+      ]
+    },
+    {
+      "category": "ALGORITHMS & LOGIC",
+      "icon": "⚔️",
+      "items": [
+        "C++ 17/20",
+        "Competitive Programming",
+        "Data Structures",
+        "Graph Algorithms",
+        "Dynamic Programming"
+      ]
+    }
+  ],
+  "trophies": [
+    {
+      "title": "🏆 2x ICPC Regional Finalist",
+      "year": "2024 & 2026",
+      "org": "ICPC South America–North",
+      "badge": "ICPC_Finalist",
+      "highlight": "Competed in the world's premier collegiate programming competition solving complex algorithmic challenges under strict time pressure."
+    },
+    {
+      "title": "🥇 Academic Honor Scholarship",
+      "year": "2025-20 & 2026-10",
+      "org": "Universidad Pontificia Bolivariana",
+      "badge": "Top_Academic_Honors",
+      "highlight": "Awarded consecutive merit scholarships for highest academic ranking with term GPAs of 4.86 and 4.93 / 5.0."
+    },
+    {
+      "title": "🔬 RedColSi National Finalist",
+      "year": "2026",
+      "org": "RedColSi / SIINFO",
+      "badge": "National_Research_Finalist",
+      "highlight": "National research finalist for SEMPIA (AI + Gamified Virtual Judge) after passing regional Santander stages with distinction."
+    },
+    {
+      "title": "🎖️ EPAM Academy LatAm #13",
+      "year": "2025",
+      "org": "EPAM Systems",
+      "badge": "Java_Specialization",
+      "highlight": "Ranked #13 across Latin America in the competitive Java Classic & EngX Bootcamp (Spring Boot, Kafka, Secure SDLC)."
+    },
+    {
+      "title": "☁️ AWS & GCP Certified",
+      "year": "2025 - 2026",
+      "org": "AWS & Google Cloud",
+      "badge": "Cloud_Certified",
+      "highlight": "Certified in AWS Cloud Foundations, AWS Security, Google Cloud Engineering, and Prompt Design in Vertex AI."
+    }
+  ],
+  "contacts": [
+    {
+      "label": "LINKEDIN",
+      "value": "Camilo Rodríguez",
+      "url": "https://www.linkedin.com/in/camilo-rodriguez-62b646264",
+      "icon": "linkedin"
+    },
+    {
+      "label": "CREDLY",
+      "value": "camilo-rodriguez",
+      "url": "https://www.credly.com/users/camilo-rodriguez.e532fd19",
+      "icon": "credly"
+    },
+    {
+      "label": "EMAIL",
+      "value": "camanrofo@gmail.com",
+      "url": "mailto:camanrofo@gmail.com",
+      "icon": "email"
+    },
+    {
+      "label": "WHATSAPP",
+      "value": "+57 313 347 5336",
+      "url": "https://wa.me/573133475336",
+      "icon": "whatsapp"
+    },
+    {
+      "label": "GITHUB",
+      "value": "@camanrofo34",
+      "url": "https://github.com/camanrofo34",
+      "icon": "github"
+    }
+  ]
+}
