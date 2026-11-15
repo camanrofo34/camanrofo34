@@ -20,19 +20,19 @@
   ],
   "about": {
     "summary": "Software Engineer in search of new challenges.",
-    "sub_summary": "Combining algorithmic rigor with modern software engineering across distributed backends in Java & Spring Boot, Node.js, and high-performance mobile applications with React Native.",
+    "sub_summary": "Distributed architectures in Java & Spring Boot, Node.js, and mobile applications with React Native.",
     "highlights": [
       {
-        "category": "ACADEMIC EXCELLENCE",
-        "detail": "Honor Scholarship recipient for academic excellence with term GPAs of 4.86 / 5.0 and 4.93 / 5.0 at UPB."
+        "category": "ACADEMIC EXCELLENCE (GPA 4.93 / 5.0)",
+        "detail": "Top UPB Honor Scholarship recipient (Term GPAs 4.86 & 4.93 / 5.0)."
       },
       {
-        "category": "COMPETITIVE PROGRAMMING",
-        "detail": "2x ICPC South America–North Finals competitor (2024 & 2026) specializing in algorithms, data structures, and C++ / Java optimization."
+        "category": "2x ICPC REGIONAL FINALIST",
+        "detail": "South America–North Finals (2024 & 2026) in C++ & Java."
       },
       {
-        "category": "AI & RESEARCH",
-        "detail": "Lead researcher on SEMPIA — an AI and gamified competitive programming virtual judge, distinguished as a RedColSi 2026 National Finalist."
+        "category": "REDCOLSI NATIONAL FINALIST",
+        "detail": "Lead researcher on SEMPIA: AI & Gamified Virtual Judge."
       }
     ]
   },
@@ -44,8 +44,8 @@
       "role": "Lead Researcher • 2026",
       "tech": ["Python", "Vertex AI", "Angular", "PostgreSQL", "Docker"],
       "description": "Full competitive programming training engine featuring virtual judge verdicts, gamified challenges, rankings, and AI progressive hint generation. RedColSi 2026 National Finalist.",
-      "url": "https://github.com/camanrofo34",
-      "repo": "camanrofo34"
+      "url": "https://github.com/SEMPIAUPB",
+      "repo": "SEMPIAUPB"
     },
     {
       "id": "02",
@@ -64,8 +64,8 @@
       "role": "Spec-Driven Development • 2025",
       "tech": ["Java 17", "Spring Boot", "Kafka", "Spring Security", "PostgreSQL"],
       "description": "Enterprise trainee/trainer administration, secure authentication, audit logging, and weekly metrics. Architected with strict Spec-Driven Development standards.",
-      "url": "https://github.com/camanrofo34/gym-crm-spec-driven-development",
-      "repo": "gym-crm-spec-driven-development"
+      "url": "https://github.com/camanrofo34/gym-crm",
+      "repo": "gym-crm"
     },
     {
       "id": "04",
@@ -81,7 +81,7 @@
   "skills": [
     {
       "category": "BACKEND & DISTRIBUTED",
-      "icon": "⚡",
+      "icon_type": "backend",
       "items": [
         "Java 17+",
         "Spring Boot",
@@ -93,7 +93,7 @@
     },
     {
       "category": "FRONTEND & MOBILE",
-      "icon": "📱",
+      "icon_type": "mobile",
       "items": [
         "React Native",
         "React.js",
@@ -104,7 +104,7 @@
     },
     {
       "category": "ALGORITHMS & LOGIC",
-      "icon": "⚔️",
+      "icon_type": "algo",
       "items": [
         "C++ 17/20",
         "Competitive Programming",
@@ -115,7 +115,7 @@
     },
     {
       "category": "CLOUD & STORAGE",
-      "icon": "☁️",
+      "icon_type": "cloud",
       "items": [
         "AWS",
         "Google Cloud",
@@ -128,24 +128,24 @@
   ],
   "trophies": [
     {
-      "title": "🏆 2x ICPC Regional Finalist",
+      "title": "2x ICPC Regional Finalist",
       "year": "2024 & 2026",
       "org": "ICPC South America–North",
-      "badge": "ICPC_Finalist",
+      "icon_type": "trophy",
       "highlight": "Competed in the world's premier collegiate programming competition solving complex algorithmic challenges under strict time pressure."
     },
     {
-      "title": "🥇 Academic Honor Scholarship",
+      "title": "Academic Honor Scholarship",
       "year": "2025-20 & 2026-10",
       "org": "Universidad Pontificia Bolivariana",
-      "badge": "Top_Academic_Honors",
+      "icon_type": "medal",
       "highlight": "Awarded consecutive merit scholarships for highest academic ranking with term GPAs of 4.86 and 4.93 / 5.0."
     },
     {
-      "title": "🔬 RedColSi National Finalist",
+      "title": "RedColSi National Finalist",
       "year": "2026",
       "org": "RedColSi / SIINFO",
-      "badge": "National_Research_Finalist",
+      "icon_type": "atom",
       "highlight": "National research finalist for SEMPIA (AI + Gamified Virtual Judge) after passing regional Santander stages with distinction."
     }
   ],
