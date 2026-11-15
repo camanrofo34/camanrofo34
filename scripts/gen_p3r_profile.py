@@ -122,6 +122,16 @@ def gen_hero_svg(cfg):
   <defs>
     <style>
       {p3r_base_styles()}
+      @keyframes oceanSway {{
+        0% {{ transform: translateY(0px) rotate(0deg); }}
+        35% {{ transform: translateY(8px) rotate(-0.7deg); }}
+        70% {{ transform: translateY(-5px) rotate(0.4deg); }}
+        100% {{ transform: translateY(0px) rotate(0deg); }}
+      }}
+      .ocean-motion {{
+        transform-origin: 200px 180px;
+        animation: oceanSway 7.5s ease-in-out infinite;
+      }}
       .b1 {{ animation: bubbleRise1 5.5s ease-in infinite; }}
       .b2 {{ animation: bubbleRise2 7s ease-in infinite 1.2s; }}
       .b3 {{ animation: bubbleRise1 4.8s ease-in infinite 2.5s; }}
@@ -167,9 +177,11 @@ def gen_hero_svg(cfg):
     <!-- Base Ocean Water Canvas -->
     <rect width="{w}" height="{h}" fill="url(#oceanGrad)" />
 
-    <!-- Authentic Persona 3 Reload Makoto Yuki Submerged Artwork -->
+    <!-- Authentic Persona 3 Reload Makoto Yuki Submerged Artwork with Ocean Motion -->
     <g mask="url(#artMask)">
-      <image href="data:image/jpeg;base64,{b64_img}" x="0" y="0" width="642" height="{h}" preserveAspectRatio="xMinYMid slice" />
+      <g class="ocean-motion">
+        <image href="data:image/jpeg;base64,{b64_img}" x="-15" y="-15" width="672" height="{h+30}" preserveAspectRatio="xMinYMid slice" />
+      </g>
     </g>
 
     <!-- Top Water Surface Shimmer Caustics on the Right -->
@@ -186,7 +198,7 @@ def gen_hero_svg(cfg):
     <g transform="translate(865, 335)" class="b5"><circle r="3" fill="#ffffff" opacity="0.6" /></g>
 
     <!-- Right-Hand P3R HUD Section: Clean & Cinematic -->
-    <g transform="translate(440, 115)">
+    <g transform="translate(315, 115)">
       <!-- 1. System Status Tag -->
       <g>
         <polygon points="-8,-2 138,-2 126,24 -20,24" fill="#002255" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-14)" />
@@ -198,19 +210,19 @@ def gen_hero_svg(cfg):
       <!-- 2. Name Heading: CAMILO RODRÍGUEZ -->
       <g transform="translate(0, 68)">
         <!-- 3D Shadow for legibility over water -->
-        <text x="3" y="3" class="font-p3r" font-size="42" fill="#001030" letter-spacing="1.5">{esc(name_display)}</text>
-        <text x="0" y="0" class="font-p3r" font-size="42" fill="#ffffff" letter-spacing="1.5">{esc(name_display)}</text>
+        <text x="3" y="3" class="font-p3r" font-size="37" fill="#001030" letter-spacing="1.2">{esc(name_display)}</text>
+        <text x="0" y="0" class="font-p3r" font-size="37" fill="#ffffff" letter-spacing="1.2">{esc(name_display)}</text>
       </g>
 
       <!-- 3. Title Ribbon: SOFTWARE ENGINEER -->
       <g transform="translate(0, 92)">
-        <polygon points="-6,-3 260,-3 248,27 -18,27" fill="url(#cyanRibbonGrad)" transform="skewX(-14)" />
-        <text x="14" y="18" class="font-p3r" font-size="15" fill="#020814" letter-spacing="2.2">{esc(title_display)}</text>
+        <polygon points="-6,-3 250,-3 238,27 -18,27" fill="url(#cyanRibbonGrad)" transform="skewX(-14)" />
+        <text x="14" y="18" class="font-p3r" font-size="14.5" fill="#020814" letter-spacing="2">{esc(title_display)}</text>
       </g>
 
       <!-- 4. Arcana Tagline -->
       <g transform="translate(0, 150)">
-        <text class="font-hud" font-size="12.5" font-weight="700" fill="#a5d8ff" letter-spacing="2">
+        <text class="font-hud" font-size="12" font-weight="700" fill="#a5d8ff" letter-spacing="1.8">
           ARCANA: <tspan fill="#e6ff00" font-weight="800">{esc(arcana_display)}</tspan>
         </text>
       </g>

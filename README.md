@@ -23,26 +23,6 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/camilo-rodriguez-62b646264" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://www.credly.com/users/camilo-rodriguez.e532fd19" target="_blank">
-    <img src="https://img.shields.io/badge/Credly-FF6B00?style=for-the-badge&logo=credly&logoColor=white" alt="Credly" />
-  </a>
-  <a href="mailto:camanrofo@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="https://wa.me/573133475336" target="_blank">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
-  </a>
-  <a href="https://github.com/camanrofo34">
-    <img src="https://img.shields.io/badge/GitHub-040f24?style=for-the-badge&logo=github&logoColor=00d2ff" alt="GitHub" />
-  </a>
-  <img src="https://img.shields.io/badge/Colombia-Bucaramanga%20🇨🇴-003893?style=for-the-badge&logo=google-maps&logoColor=white" alt="Location" />
-  <img src="https://komarev.com/ghpvc/?username=camanrofo34&label=Profile%20Views&color=00d2ff&style=for-the-badge" alt="Profile Views" />
-</p>
-
 <br />
 
 <!-- ===================================================================== -->
