@@ -5,6 +5,7 @@ Generates responsive, animated SVGs and profile assets styled after
 Persona 3 Reload's water splash, midnight blue palettes, and sleek angled HUD.
 """
 
+import base64
 import json
 import math
 import os
@@ -105,30 +106,51 @@ def gen_hero_svg(cfg):
     user = cfg["user"]
     w, h = 900, 360
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{esc(user['name'])} - Persona 3 Reload Profile">
+    # Load hero background artwork
+    bg_path = os.path.join(OUTPUT_DIR, "hero-bg.jpg")
+    b64_img = ""
+    if os.path.exists(bg_path):
+        with open(bg_path, "rb") as f:
+            b64_img = base64.b64encode(f.read()).decode("ascii")
+
+    name_display = user.get("name", "Camilo Rodríguez").upper()
+    title_display = user.get("title", "SOFTWARE ENGINEER").upper()
+    arcana_display = user.get("arcana", "THE CHARIOT").upper()
+    status_display = user.get("status", "SYS://READY").upper()
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{esc(name_display)} - Persona 3 Reload Profile">
   <defs>
     <style>
       {p3r_base_styles()}
-      .wave1 {{ animation: waveDrift 7s ease-in-out infinite; }}
-      .wave2 {{ animation: waveSlow 9s ease-in-out infinite; }}
-      .dial-cw {{ transform-origin: 755px 180px; animation: dialSpinCW 45s linear infinite; }}
-      .dial-ccw {{ transform-origin: 755px 180px; animation: dialSpinCCW 60s linear infinite; }}
-      .r1 {{ transform-origin: 755px 180px; animation: ripplePulse 3.5s ease-out infinite; }}
-      .r2 {{ transform-origin: 755px 180px; animation: ripplePulse2 4.2s ease-out infinite 1.8s; }}
-      .b1 {{ animation: bubbleRise1 5s ease-in infinite; }}
-      .b2 {{ animation: bubbleRise2 6.5s ease-in infinite 1.2s; }}
-      .b3 {{ animation: bubbleRise1 4.5s ease-in infinite 2.5s; }}
-      .b4 {{ animation: bubbleRise2 5.8s ease-in infinite 3.5s; }}
+      .b1 {{ animation: bubbleRise1 5.5s ease-in infinite; }}
+      .b2 {{ animation: bubbleRise2 7s ease-in infinite 1.2s; }}
+      .b3 {{ animation: bubbleRise1 4.8s ease-in infinite 2.5s; }}
+      .b4 {{ animation: bubbleRise2 6.2s ease-in infinite 3.8s; }}
+      .b5 {{ animation: bubbleRise1 5.2s ease-in infinite 0.7s; }}
+      .caustic {{ animation: waveDrift 6s ease-in-out infinite alternate; }}
       .blink {{ animation: blinkCursor 1s steps(1) infinite; }}
       .p3r-glow {{ animation: cyanGlow 3s ease-in-out infinite; }}
     </style>
 
-    <!-- Deep Underwater Linear Gradients -->
-    <linearGradient id="abyssGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020712" />
-      <stop offset="45%" stop-color="#051428" />
-      <stop offset="100%" stop-color="#082346" />
+    <!-- Deep Blue Ocean Background Gradient matching P3R artwork -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00efff" />
+      <stop offset="8%" stop-color="#0077ff" />
+      <stop offset="30%" stop-color="#003cdb" />
+      <stop offset="70%" stop-color="#001882" />
+      <stop offset="100%" stop-color="#000b40" />
     </linearGradient>
+
+    <!-- Seamless Blend Mask for Artwork Edge -->
+    <linearGradient id="blendMaskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="92%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <mask id="artMask">
+      <rect x="0" y="0" width="642" height="{h}" fill="url(#blendMaskGrad)" />
+    </mask>
 
     <linearGradient id="cyanRibbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#004488" stop-opacity="0.9" />
@@ -136,177 +158,71 @@ def gen_hero_svg(cfg):
       <stop offset="100%" stop-color="#00e5ff" stop-opacity="1" />
     </linearGradient>
 
-    <linearGradient id="deepWaterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0099ff" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#041a3a" stop-opacity="0.8" />
-    </linearGradient>
-
-    <linearGradient id="hpGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00d2ff" />
-      <stop offset="100%" stop-color="#55ffff" />
-    </linearGradient>
-
-    <linearGradient id="spGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e6ff00" />
-      <stop offset="100%" stop-color="#fff066" />
-    </linearGradient>
-
-    <!-- Halftone / Dot Grid Pattern -->
-    <pattern id="p3rGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="12" cy="12" r="1.1" fill="#00d2ff" fill-opacity="0.18" />
-      <line x1="0" y1="12" x2="24" y2="12" stroke="#00d2ff" stroke-opacity="0.04" stroke-width="0.5" />
-      <line x1="12" y1="0" x2="12" y2="24" stroke="#00d2ff" stroke-opacity="0.04" stroke-width="0.5" />
-    </pattern>
-
     <clipPath id="heroFrame">
       <rect width="{w}" height="{h}" rx="12" />
     </clipPath>
   </defs>
 
   <g clip-path="url(#heroFrame)">
-    <!-- Base Abyssal Background -->
-    <rect width="{w}" height="{h}" fill="url(#abyssGrad)" />
-    <rect width="{w}" height="{h}" fill="url(#p3rGrid)" />
+    <!-- Base Ocean Water Canvas -->
+    <rect width="{w}" height="{h}" fill="url(#oceanGrad)" />
 
-    <!-- Ambient Dark Hour Compass & Clock Ring Elements (Right Side HUD) -->
-    <g opacity="0.6">
-      <circle class="r1" cx="755" cy="180" r="10" fill="none" stroke="#00e5ff" />
-      <circle class="r2" cx="755" cy="180" r="10" fill="none" stroke="#00a3e0" />
-
-      <!-- Outer Clock Gear / Ring -->
-      <g class="dial-cw">
-        <circle cx="755" cy="180" r="130" fill="none" stroke="#00d2ff" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="4 8" />
-        <circle cx="755" cy="180" r="115" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1" />
-        <!-- Clock ticks -->
-        <line x1="755" y1="45" x2="755" y2="60" stroke="#00d2ff" stroke-width="2" />
-        <line x1="755" y1="300" x2="755" y2="315" stroke="#00d2ff" stroke-width="2" />
-        <line x1="620" y1="180" x2="635" y2="180" stroke="#00d2ff" stroke-width="2" />
-        <line x1="875" y1="180" x2="890" y2="180" stroke="#00d2ff" stroke-width="2" />
-      </g>
-
-      <!-- Inner High-Tech Dial -->
-      <g class="dial-ccw">
-        <circle cx="755" cy="180" r="85" fill="none" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="16 10 32 8" />
-        <polygon points="755,100 760,112 750,112" fill="#e6ff00" opacity="0.7" />
-        <polygon points="755,260 760,248 750,248" fill="#00d2ff" opacity="0.7" />
-        <polygon points="675,180 687,175 687,185" fill="#00d2ff" opacity="0.7" />
-        <polygon points="835,180 823,175 823,185" fill="#00d2ff" opacity="0.7" />
-      </g>
-
-      <!-- Core Seal Center -->
-      <circle cx="755" cy="180" r="45" fill="#041226" stroke="#00d2ff" stroke-width="2" opacity="0.8" />
-      <text x="755" y="174" text-anchor="middle" class="font-hud" font-size="11" font-weight="700" fill="#00d2ff" letter-spacing="1">DARK HOUR</text>
-      <text x="755" y="192" text-anchor="middle" class="font-hud" font-size="14" font-weight="900" fill="#ffffff" letter-spacing="2">00:00</text>
+    <!-- Authentic Persona 3 Reload Makoto Yuki Submerged Artwork -->
+    <g mask="url(#artMask)">
+      <image href="data:image/jpeg;base64,{b64_img}" x="0" y="0" width="642" height="{h}" preserveAspectRatio="xMinYMid slice" />
     </g>
 
-    <!-- Submerged Water Waves & Liquid Flow (Bottom and Diagonals) -->
-    <g class="wave1" opacity="0.35">
-      <path d="M-50,310 C120,280 260,340 440,300 C620,260 760,330 960,290 L960,380 L-50,380 Z" fill="url(#deepWaterGrad)" />
-    </g>
-    <g class="wave2" opacity="0.45">
-      <path d="M-30,325 C150,350 310,290 520,330 C710,365 830,300 980,335 L980,380 L-30,380 Z" fill="#0066cc" />
+    <!-- Top Water Surface Shimmer Caustics on the Right -->
+    <g class="caustic" opacity="0.65">
+      <path d="M420,18 C470,8 520,24 580,14 C640,6 700,22 760,12 C820,4 860,20 910,12" fill="none" stroke="#00ffff" stroke-width="2.5" />
+      <path d="M460,32 C510,22 560,38 620,28 C680,18 740,34 800,24 C850,16 880,30 920,22" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.7" />
     </g>
 
-    <!-- Animated Water Bubbles -->
-    <g transform="translate(680, 320)" class="b1"><circle r="4" fill="#00ffff" opacity="0.7" /><circle r="1.5" cx="-1" cy="-1" fill="#fff" /></g>
-    <g transform="translate(730, 340)" class="b2"><circle r="6" fill="#00d2ff" opacity="0.6" /><circle r="2" cx="-1.5" cy="-1.5" fill="#fff" /></g>
-    <g transform="translate(810, 310)" class="b3"><circle r="3.5" fill="#55ffff" opacity="0.7" /><circle r="1" cx="-1" cy="-1" fill="#fff" /></g>
-    <g transform="translate(860, 335)" class="b4"><circle r="5" fill="#00d2ff" opacity="0.5" /><circle r="1.8" cx="-1.2" cy="-1.2" fill="#fff" /></g>
+    <!-- Translucent Rising Water Bubbles -->
+    <g transform="translate(520, 340)" class="b1"><circle r="4.5" fill="#00ffff" opacity="0.65" /><circle r="1.5" cx="-1" cy="-1" fill="#fff" /></g>
+    <g transform="translate(610, 350)" class="b2"><circle r="6.5" fill="#00d2ff" opacity="0.55" /><circle r="2" cx="-1.5" cy="-1.5" fill="#fff" /></g>
+    <g transform="translate(730, 330)" class="b3"><circle r="3.5" fill="#55ffff" opacity="0.75" /><circle r="1" cx="-1" cy="-1" fill="#fff" /></g>
+    <g transform="translate(820, 345)" class="b4"><circle r="5.5" fill="#00d2ff" opacity="0.5" /><circle r="1.8" cx="-1.2" cy="-1.2" fill="#fff" /></g>
+    <g transform="translate(865, 335)" class="b5"><circle r="3" fill="#ffffff" opacity="0.6" /></g>
 
-    <!-- P3R Angled Dynamic Water Splash Ribbons (Slicing Across) -->
-    <g>
-      <!-- Deep Blue Base Ribbon -->
-      <polygon points="-20,-20 540,-20 440,380 -20,380" fill="#071b36" opacity="0.75" />
-      <!-- Dark Hour Cyan Accent Slash -->
-      <polygon points="536,-20 548,-20 448,380 436,380" fill="#00d2ff" opacity="0.9" />
-      <polygon points="556,-20 560,-20 460,380 456,380" fill="#ffffff" opacity="0.4" />
-      <!-- Thin Neon Glow Edge -->
-      <line x1="542" y1="-20" x2="442" y2="380" stroke="#00ffff" stroke-width="2" class="p3r-glow" />
-    </g>
-
-    <!-- Left HUD Content: Persona 3 Reload Protagonist Profile -->
-    <g transform="translate(42, 38)">
-      <!-- Top System Bar -->
+    <!-- Right-Hand P3R HUD Section: Clean & Cinematic -->
+    <g transform="translate(440, 115)">
+      <!-- 1. System Status Tag -->
       <g>
-        <rect x="0" y="0" width="168" height="22" fill="#00d2ff" transform="skewX(-14)" />
-        <text x="14" y="15" class="font-hud" font-size="11" font-weight="900" fill="#020813" letter-spacing="1.5">P3R // RELOAD ONLINE</text>
-        
-        <rect x="180" y="0" width="115" height="22" fill="#0c2d54" transform="skewX(-14)" stroke="#00d2ff" stroke-width="0.8" />
-        <text x="194" y="15" class="font-hud" font-size="10.5" font-weight="700" fill="#00d2ff" letter-spacing="1">SYS://LV. 99</text>
-
-        <text x="312" y="16" class="font-hud" font-size="11" font-weight="600" fill="#7ba3c7" letter-spacing="1">ID: #CAMANROFO34</text>
+        <polygon points="-8,-2 138,-2 126,24 -20,24" fill="#002255" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-14)" />
+        <polygon points="-8,-2 14,-2 2,24 -20,24" fill="#00d2ff" transform="skewX(-14)" />
+        <text x="24" y="16" class="font-hud" font-size="11" font-weight="900" fill="#00ffff" letter-spacing="1.5">{esc(status_display)}</text>
+        <text x="112" y="16" class="font-hud blink" font-size="11" font-weight="900" fill="#00ffff">█</text>
       </g>
 
-      <!-- Main Name Heading in P3R Angled Slanted Typography -->
-      <g transform="translate(0, 72)">
-        <!-- Name Shadow for 3D P3R Depth -->
-        <text x="3" y="3" class="font-p3r" font-size="37" fill="#020b18" letter-spacing="1.2">CAMILO ANDRÉS RODRÍGUEZ</text>
-        <text x="0" y="0" class="font-p3r" font-size="37" fill="#ffffff" letter-spacing="1.2">CAMILO ANDRÉS RODRÍGUEZ</text>
+      <!-- 2. Name Heading: CAMILO RODRÍGUEZ -->
+      <g transform="translate(0, 68)">
+        <!-- 3D Shadow for legibility over water -->
+        <text x="3" y="3" class="font-p3r" font-size="42" fill="#001030" letter-spacing="1.5">{esc(name_display)}</text>
+        <text x="0" y="0" class="font-p3r" font-size="42" fill="#ffffff" letter-spacing="1.5">{esc(name_display)}</text>
       </g>
 
-      <!-- Subtitle Skewed Ribbon -->
-      <g transform="translate(0, 94)">
-        <polygon points="-4,-2 460,-2 450,26 -14,26" fill="url(#cyanRibbonGrad)" transform="skewX(-14)" />
-        <text x="12" y="18" class="font-p3r" font-size="14.5" fill="#020814" letter-spacing="2">SOFTWARE ENGINEER // FULL-STACK &amp; CLOUD</text>
+      <!-- 3. Title Ribbon: SOFTWARE ENGINEER -->
+      <g transform="translate(0, 92)">
+        <polygon points="-6,-3 260,-3 248,27 -18,27" fill="url(#cyanRibbonGrad)" transform="skewX(-14)" />
+        <text x="14" y="18" class="font-p3r" font-size="15" fill="#020814" letter-spacing="2.2">{esc(title_display)}</text>
       </g>
 
-      <!-- P3R Status Gauges (HP: GPA / SP: ICPC Excellence) -->
-      <g transform="translate(0, 144)">
-        <!-- HP Gauge (Academic Excellence) -->
-        <g transform="translate(0, 0)">
-          <text x="0" y="14" class="font-hud" font-size="12" font-weight="900" fill="#00d2ff">HP</text>
-          <!-- Gauge Background Track -->
-          <polygon points="32,2 250,2 244,16 26,16" fill="#0b2447" transform="skewX(-14)" stroke="#00d2ff" stroke-width="0.8" />
-          <!-- Gauge Fill -->
-          <polygon points="32,2 246,2 240,16 26,16" fill="url(#hpGrad)" transform="skewX(-14)" />
-          <text x="260" y="14" class="font-hud" font-size="11.5" font-weight="800" fill="#ffffff">4.93 / 5.0 <tspan fill="#00d2ff" font-size="9.5">(UPB HONORS)</tspan></text>
-        </g>
-
-        <!-- SP Gauge (Algorithmic / ICPC) -->
-        <g transform="translate(0, 26)">
-          <text x="0" y="14" class="font-hud" font-size="12" font-weight="900" fill="#e6ff00">SP</text>
-          <!-- Gauge Background Track -->
-          <polygon points="32,2 250,2 244,16 26,16" fill="#0b2447" transform="skewX(-14)" stroke="#e6ff00" stroke-width="0.8" />
-          <!-- Gauge Fill -->
-          <polygon points="32,2 248,2 242,16 26,16" fill="url(#spGrad)" transform="skewX(-14)" />
-          <text x="260" y="14" class="font-hud" font-size="11.5" font-weight="800" fill="#ffffff">2x ICPC <tspan fill="#e6ff00" font-size="9.5">(REGIONAL FINALIST)</tspan></text>
-        </g>
-      </g>
-
-      <!-- Tags & Distinction Chips -->
-      <g transform="translate(0, 206)">
-        <!-- Chip 1: ICPC -->
-        <g transform="translate(0,0)">
-          <polygon points="0,0 128,0 120,22 -8,22" fill="#082348" stroke="#00d2ff" stroke-width="1" transform="skewX(-12)" />
-          <text x="8" y="15" class="font-hud" font-size="10" font-weight="700" fill="#00d2ff">★ 2x ICPC FINALIST</text>
-        </g>
-        <!-- Chip 2: RedColSi -->
-        <g transform="translate(142,0)">
-          <polygon points="0,0 148,0 140,22 -8,22" fill="#082348" stroke="#00d2ff" stroke-width="1" transform="skewX(-12)" />
-          <text x="8" y="15" class="font-hud" font-size="10" font-weight="700" fill="#00d2ff">🔬 REDCOLSI FINALIST</text>
-        </g>
-        <!-- Chip 3: Cloud -->
-        <g transform="translate(304,0)">
-          <polygon points="0,0 134,0 126,22 -8,22" fill="#082348" stroke="#e6ff00" stroke-width="1" transform="skewX(-12)" />
-          <text x="8" y="15" class="font-hud" font-size="10" font-weight="700" fill="#e6ff00">☁️ AWS &amp; GCP CERT</text>
-        </g>
-      </g>
-
-      <!-- Bottom Status Diagnostic Line -->
-      <g transform="translate(0, 256)">
-        <text x="0" y="12" class="font-hud" font-size="11" fill="#88b5dd">
-          ARCANA: <tspan fill="#ffffff" font-weight="700">THE CHARIOT</tspan> · SPEC-DRIVEN ARCHITECTURE · BUCARAMANGA 🇨🇴 · <tspan fill="#00d2ff" font-weight="700">SYS://READY</tspan> <tspan class="blink" fill="#00d2ff">█</tspan>
+      <!-- 4. Arcana Tagline -->
+      <g transform="translate(0, 150)">
+        <text class="font-hud" font-size="12.5" font-weight="700" fill="#a5d8ff" letter-spacing="2">
+          ARCANA: <tspan fill="#e6ff00" font-weight="800">{esc(arcana_display)}</tspan>
         </text>
       </g>
     </g>
 
-    <!-- Outer Sleek Border Frame -->
-    <rect width="{w-2}" height="{h-2}" x="1" y="1" rx="11" fill="none" stroke="#00d2ff" stroke-opacity="0.3" stroke-width="1.5" />
-    <!-- Corner Tech Brackets -->
-    <path d="M1,25 L1,1 L25,1" stroke="#00e5ff" stroke-width="3" fill="none" />
-    <path d="M{w-1},25 L{w-1},1 L{w-25},1" stroke="#00e5ff" stroke-width="3" fill="none" />
-    <path d="M1,{h-25} L1,{h-1} L25,{h-1}" stroke="#00e5ff" stroke-width="3" fill="none" />
-    <path d="M{w-1},{h-25} L{w-1},{h-1} L{w-25},{h-1}" stroke="#00e5ff" stroke-width="3" fill="none" />
+    <!-- Sleek Tech Border Frame -->
+    <rect width="{w-2}" height="{h-2}" x="1" y="1" rx="11" fill="none" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="1.5" />
+    <!-- Corner Accents -->
+    <path d="M1,24 L1,1 L24,1" stroke="#00e5ff" stroke-width="3" fill="none" />
+    <path d="M{w-1},24 L{w-1},1 L{w-24},1" stroke="#00e5ff" stroke-width="3" fill="none" />
+    <path d="M1,{h-24} L1,{h-1} L24,{h-1}" stroke="#00e5ff" stroke-width="3" fill="none" />
+    <path d="M{w-1},{h-24} L{w-1},{h-1} L{w-24},{h-1}" stroke="#00e5ff" stroke-width="3" fill="none" />
   </g>
 </svg>
 """
