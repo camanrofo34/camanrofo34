@@ -12,11 +12,6 @@
       50% { transform: translateX(25px) translateY(6px) scaleY(1.08); }
       100% { transform: translateX(0px) translateY(0px) scaleY(1); }
     }
-    @keyframes ripplePulse {
-      0% { r: 10px; opacity: 0.9; stroke-width: 2.5; }
-      50% { r: 75px; opacity: 0.4; stroke-width: 1.5; }
-      100% { r: 140px; opacity: 0; stroke-width: 0.5; }
-    }
     @keyframes bubbleRise1 {
       0% { transform: translateY(0px) scale(0.7); opacity: 0; }
       20% { opacity: 0.8; }
@@ -48,7 +43,7 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
     @media (prefers-reduced-motion: reduce) {
-      *, .wave-anim, .ripple-anim, .bubble-anim, .dial-anim {
+      *, .wave-anim, .bubble-anim {
         animation: none !important;
       }
     }
@@ -58,28 +53,45 @@
 
   <g>
     
-      <g transform="translate(24, 10)">
-        <polygon points="-8,0 850,0 838,42 -20,42" fill="#041936" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" transform="skewX(-14)" />
-        <rect x="0" y="8" width="5" height="26" fill="#00d2ff" />
-        <text x="18" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">🏆 2x ICPC Regional Finalist</text>
-        <text x="360" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[2024 &amp; 2026]</text>
-        <text x="500" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">ICPC South America–North</text>
+      <g transform="translate(16, 10)">
+        <!-- Strictly positive coordinates: Left edge is x=8 > 0 -->
+        <polygon points="18,0 864,0 854,42 8,42" fill="#041936" fill-opacity="0.85" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" />
+        <rect x="18" y="8" width="5" height="26" fill="#00d2ff" />
+        <g transform="translate(30, 11) scale(0.9)">
+          <path d="M4,3 H16 V8 C16,11.3 13.3,14 10,14 C6.7,14 4,11.3 4,8 Z" fill="none" stroke="#e6ff00" stroke-width="2" />
+          <path d="M4,5 H1 C1,7.2 2,9 4,9 M16,5 H19 C19,7.2 18,9 16,9" fill="none" stroke="#00d2ff" stroke-width="1.8" />
+          <line x1="10" y1="14" x2="10" y2="18" stroke="#e6ff00" stroke-width="2" />
+          <line x1="6" y1="18" x2="14" y2="18" stroke="#e6ff00" stroke-width="2" />
+        </g>
+        <text x="56" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">2x ICPC Regional Finalist</text>
+        <text x="380" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[2024 &amp; 2026]</text>
+        <text x="510" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">ICPC South America–North</text>
       </g>
         
-      <g transform="translate(24, 58)">
-        <polygon points="-8,0 850,0 838,42 -20,42" fill="#041936" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" transform="skewX(-14)" />
-        <rect x="0" y="8" width="5" height="26" fill="#00d2ff" />
-        <text x="18" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">🥇 Academic Honor Scholarship</text>
-        <text x="360" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[2025-20 &amp; 2026-10]</text>
-        <text x="500" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">Universidad Pontificia Bolivariana</text>
+      <g transform="translate(16, 58)">
+        <!-- Strictly positive coordinates: Left edge is x=8 > 0 -->
+        <polygon points="18,0 864,0 854,42 8,42" fill="#041936" fill-opacity="0.85" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" />
+        <rect x="18" y="8" width="5" height="26" fill="#00d2ff" />
+        <g transform="translate(30, 11) scale(0.9)">
+          <polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18.5 10,15 4.5,18.5 6,12 1,7.5 7.5,7" fill="#e6ff00" stroke="#00ffff" stroke-width="1" />
+        </g>
+        <text x="56" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">Academic Honor Scholarship</text>
+        <text x="380" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[2025-20 &amp; 2026-10]</text>
+        <text x="510" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">Universidad Pontificia Bolivariana</text>
       </g>
         
-      <g transform="translate(24, 106)">
-        <polygon points="-8,0 850,0 838,42 -20,42" fill="#041936" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" transform="skewX(-14)" />
-        <rect x="0" y="8" width="5" height="26" fill="#00d2ff" />
-        <text x="18" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">🔬 RedColSi National Finalist</text>
-        <text x="360" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[2026]</text>
-        <text x="500" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">RedColSi / SIINFO</text>
+      <g transform="translate(16, 106)">
+        <!-- Strictly positive coordinates: Left edge is x=8 > 0 -->
+        <polygon points="18,0 864,0 854,42 8,42" fill="#041936" fill-opacity="0.85" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" />
+        <rect x="18" y="8" width="5" height="26" fill="#00d2ff" />
+        <g transform="translate(30, 11) scale(0.9)">
+          <ellipse cx="10" cy="10" rx="8" ry="3" fill="none" stroke="#00d2ff" stroke-width="1.5" transform="rotate(30 10 10)" />
+          <ellipse cx="10" cy="10" rx="8" ry="3" fill="none" stroke="#00d2ff" stroke-width="1.5" transform="rotate(-30 10 10)" />
+          <circle cx="10" cy="10" r="2.2" fill="#00ffff" />
+        </g>
+        <text x="56" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">RedColSi National Finalist</text>
+        <text x="380" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[2026]</text>
+        <text x="510" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">RedColSi / SIINFO</text>
       </g>
         
   </g>

@@ -12,11 +12,6 @@
       50% { transform: translateX(25px) translateY(6px) scaleY(1.08); }
       100% { transform: translateX(0px) translateY(0px) scaleY(1); }
     }
-    @keyframes ripplePulse {
-      0% { r: 10px; opacity: 0.9; stroke-width: 2.5; }
-      50% { r: 75px; opacity: 0.4; stroke-width: 1.5; }
-      100% { r: 140px; opacity: 0; stroke-width: 0.5; }
-    }
     @keyframes bubbleRise1 {
       0% { transform: translateY(0px) scale(0.7); opacity: 0; }
       20% { opacity: 0.8; }
@@ -48,7 +43,7 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
     @media (prefers-reduced-motion: reduce) {
-      *, .wave-anim, .ripple-anim, .bubble-anim, .dial-anim {
+      *, .wave-anim, .bubble-anim {
         animation: none !important;
       }
     }
@@ -59,165 +54,181 @@
   <g>
     
       <g transform="translate(20.0, 10)">
-        <polygon points="-6,-2 197.0,-2 187.0,30 -16,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-12)" />
-        <text x="6" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
-          ⚡ BACKEND &amp; DISTRIBUTED
+        <polygon points="8,-2 205.0,-2 195.0,30 -2,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" />
+        <g transform="translate(8, 5) scale(0.9)">
+          <polyline points="6,4 2,10 6,16" fill="none" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" />
+          <polyline points="14,4 18,10 14,16" fill="none" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" />
+          <line x1="11" y1="4" x2="9" y2="16" stroke="#e6ff00" stroke-width="1.8" stroke-linecap="round" />
+        </g>
+        <text x="32" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
+          BACKEND &amp; DISTRIBUTED
         </text>
         
           <g transform="translate(6, 56)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Java 17+</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Java 17+</text>
           </g>
             
           <g transform="translate(6, 86)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Spring Boot</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Spring Boot</text>
           </g>
             
           <g transform="translate(6, 116)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Node.js</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Node.js</text>
           </g>
             
           <g transform="translate(6, 146)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Express.js</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Express.js</text>
           </g>
             
           <g transform="translate(6, 176)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Apache Kafka</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Apache Kafka</text>
           </g>
             
           <g transform="translate(6, 206)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Microservices</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Microservices</text>
           </g>
             
       </g>
         
       <g transform="translate(235.0, 10)">
-        <polygon points="-6,-2 197.0,-2 187.0,30 -16,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-12)" />
-        <text x="6" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
-          📱 FRONTEND &amp; MOBILE
+        <polygon points="8,-2 205.0,-2 195.0,30 -2,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" />
+        <g transform="translate(8, 5) scale(0.9)">
+          <rect x="5" y="1" width="10" height="18" rx="2" fill="none" stroke="#00d2ff" stroke-width="1.8" />
+          <line x1="9" y1="15" x2="11" y2="15" stroke="#00ffff" stroke-width="2" stroke-linecap="round" />
+        </g>
+        <text x="32" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
+          FRONTEND &amp; MOBILE
         </text>
         
           <g transform="translate(6, 56)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">React Native</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">React Native</text>
           </g>
             
           <g transform="translate(6, 86)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">React.js</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">React.js</text>
           </g>
             
           <g transform="translate(6, 116)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">TypeScript</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">TypeScript</text>
           </g>
             
           <g transform="translate(6, 146)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">JavaScript</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">JavaScript</text>
           </g>
             
           <g transform="translate(6, 176)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Tailwind CSS</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Tailwind CSS</text>
           </g>
             
       </g>
         
       <g transform="translate(450.0, 10)">
-        <polygon points="-6,-2 197.0,-2 187.0,30 -16,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-12)" />
-        <text x="6" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
-          ⚔️ ALGORITHMS &amp; LOGIC
+        <polygon points="8,-2 205.0,-2 195.0,30 -2,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" />
+        <g transform="translate(8, 5) scale(0.9)">
+          <polygon points="10,2 18,10 10,18 2,10" fill="none" stroke="#e6ff00" stroke-width="1.8" />
+          <circle cx="10" cy="10" r="2.5" fill="#00d2ff" />
+        </g>
+        <text x="32" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
+          ALGORITHMS &amp; LOGIC
         </text>
         
           <g transform="translate(6, 56)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">C++ 17/20</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">C++ 17/20</text>
           </g>
             
           <g transform="translate(6, 86)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Competitive Programming</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Competitive Programming</text>
           </g>
             
           <g transform="translate(6, 116)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Data Structures</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Data Structures</text>
           </g>
             
           <g transform="translate(6, 146)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Graph Theory</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Graph Theory</text>
           </g>
             
           <g transform="translate(6, 176)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Optimization</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Optimization</text>
           </g>
             
       </g>
         
       <g transform="translate(665.0, 10)">
-        <polygon points="-6,-2 197.0,-2 187.0,30 -16,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-12)" />
-        <text x="6" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
-          ☁️ CLOUD &amp; STORAGE
+        <polygon points="8,-2 205.0,-2 195.0,30 -2,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" />
+        <g transform="translate(8, 5) scale(0.9)">
+          <path d="M5,14 A4,4 0 0,1 5,8 A5,5 0 0,1 14,6 A4,4 0 0,1 17,14 Z" fill="none" stroke="#00d2ff" stroke-width="1.8" />
+        </g>
+        <text x="32" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
+          CLOUD &amp; STORAGE
         </text>
         
           <g transform="translate(6, 56)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">AWS</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">AWS</text>
           </g>
             
           <g transform="translate(6, 86)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Google Cloud</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Google Cloud</text>
           </g>
             
           <g transform="translate(6, 116)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Docker</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">Docker</text>
           </g>
             
           <g transform="translate(6, 146)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">PostgreSQL</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">PostgreSQL</text>
           </g>
             
           <g transform="translate(6, 176)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">MySQL</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">MySQL</text>
           </g>
             
           <g transform="translate(6, 206)">
-            <polygon points="0,0 191.0,0 183.0,24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">REST APIs</text>
+            <polygon points="8,0 199.0,0 191.0,24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">REST APIs</text>
           </g>
             
       </g>

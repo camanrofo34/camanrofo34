@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-Persona 3 Reload (P3R) SVG Profile Asset Generator - Refined & Minimalist
-Generates responsive, animated SVGs styled after Persona 3 Reload's floating,
-slanted typography, ocean water caustics, and deep blue palettes.
-Decoupled data driven by p3r.config.json.
+Persona 3 Reload (P3R) SVG Profile Asset Generator - Final Master Version
+Generates responsive, animated SVGs styled after Persona 3 Reload:
+- Clean floating slanted geometry (zero left-edge clipping, strictly positive coordinates)
+- High-contrast electric cyan, phosphor yellow, and pure white P3R theme colors
+- Pure vector iconography (zero emojis)
+- Fully decoupled data driven by p3r.config.json
 """
 
 import base64
@@ -44,11 +46,6 @@ def p3r_base_styles():
       50% { transform: translateX(25px) translateY(6px) scaleY(1.08); }
       100% { transform: translateX(0px) translateY(0px) scaleY(1); }
     }
-    @keyframes ripplePulse {
-      0% { r: 10px; opacity: 0.9; stroke-width: 2.5; }
-      50% { r: 75px; opacity: 0.4; stroke-width: 1.5; }
-      100% { r: 140px; opacity: 0; stroke-width: 0.5; }
-    }
     @keyframes bubbleRise1 {
       0% { transform: translateY(0px) scale(0.7); opacity: 0; }
       20% { opacity: 0.8; }
@@ -80,11 +77,52 @@ def p3r_base_styles():
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
     @media (prefers-reduced-motion: reduce) {
-      *, .wave-anim, .ripple-anim, .bubble-anim, .dial-anim {
+      *, .wave-anim, .bubble-anim {
         animation: none !important;
       }
     }
     """
+
+def p3r_icon(icon_type, x=0, y=0, size=18):
+    """Generates pure vector SVG icons in P3R theme colors (Zero emojis)."""
+    if icon_type == "trophy":
+        return f"""<g transform="translate({x}, {y}) scale({size/20})">
+          <path d="M4,3 H16 V8 C16,11.3 13.3,14 10,14 C6.7,14 4,11.3 4,8 Z" fill="none" stroke="#e6ff00" stroke-width="2" />
+          <path d="M4,5 H1 C1,7.2 2,9 4,9 M16,5 H19 C19,7.2 18,9 16,9" fill="none" stroke="#00d2ff" stroke-width="1.8" />
+          <line x1="10" y1="14" x2="10" y2="18" stroke="#e6ff00" stroke-width="2" />
+          <line x1="6" y1="18" x2="14" y2="18" stroke="#e6ff00" stroke-width="2" />
+        </g>"""
+    elif icon_type == "medal":
+        return f"""<g transform="translate({x}, {y}) scale({size/20})">
+          <polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18.5 10,15 4.5,18.5 6,12 1,7.5 7.5,7" fill="#e6ff00" stroke="#00ffff" stroke-width="1" />
+        </g>"""
+    elif icon_type == "atom":
+        return f"""<g transform="translate({x}, {y}) scale({size/20})">
+          <ellipse cx="10" cy="10" rx="8" ry="3" fill="none" stroke="#00d2ff" stroke-width="1.5" transform="rotate(30 10 10)" />
+          <ellipse cx="10" cy="10" rx="8" ry="3" fill="none" stroke="#00d2ff" stroke-width="1.5" transform="rotate(-30 10 10)" />
+          <circle cx="10" cy="10" r="2.2" fill="#00ffff" />
+        </g>"""
+    elif icon_type == "backend":
+        return f"""<g transform="translate({x}, {y}) scale({size/20})">
+          <polyline points="6,4 2,10 6,16" fill="none" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" />
+          <polyline points="14,4 18,10 14,16" fill="none" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" />
+          <line x1="11" y1="4" x2="9" y2="16" stroke="#e6ff00" stroke-width="1.8" stroke-linecap="round" />
+        </g>"""
+    elif icon_type == "mobile":
+        return f"""<g transform="translate({x}, {y}) scale({size/20})">
+          <rect x="5" y="1" width="10" height="18" rx="2" fill="none" stroke="#00d2ff" stroke-width="1.8" />
+          <line x1="9" y1="15" x2="11" y2="15" stroke="#00ffff" stroke-width="2" stroke-linecap="round" />
+        </g>"""
+    elif icon_type == "algo":
+        return f"""<g transform="translate({x}, {y}) scale({size/20})">
+          <polygon points="10,2 18,10 10,18 2,10" fill="none" stroke="#e6ff00" stroke-width="1.8" />
+          <circle cx="10" cy="10" r="2.5" fill="#00d2ff" />
+        </g>"""
+    elif icon_type == "cloud":
+        return f"""<g transform="translate({x}, {y}) scale({size/20})">
+          <path d="M5,14 A4,4 0 0,1 5,8 A5,5 0 0,1 14,6 A4,4 0 0,1 17,14 Z" fill="none" stroke="#00d2ff" stroke-width="1.8" />
+        </g>"""
+    return ""
 
 def gen_hero_svg(cfg):
     user = cfg["user"]
@@ -250,12 +288,12 @@ def gen_section_header_svg(idx, title, subtitle):
 
 def gen_about_panel_svg(cfg):
     """
-    Generates the refined P3R Character Status & Identity sheet.
-    Minimalist, floating design with zero heavy dark background blocks.
+    Persona 3 Reload Status & Identity sheet.
+    Separated panels with zero overlapping, ample vertical spacing, and safe margins.
     """
     user = cfg["user"]
     about = cfg["about"]
-    w, h = 900, 200
+    w, h = 900, 220
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Status Identity - Camilo Rodríguez">
   <defs>
@@ -266,50 +304,54 @@ def gen_about_panel_svg(cfg):
 
   <g>
     <!-- Left Column: Software Engineer Identity -->
-    <g transform="translate(24, 20)">
-      <polygon points="0,0 210,0 196,24 -14,24" fill="#00356b" stroke="#00d2ff" stroke-width="1" transform="skewX(-14)" />
-      <text x="14" y="16" class="font-hud" font-size="11" font-weight="900" fill="#00ffff" letter-spacing="1.5">SOFTWARE ENGINEER</text>
+    <g transform="translate(24, 12)">
+      <polygon points="12,0 216,0 204,24 0,24" fill="#00356b" stroke="#00d2ff" stroke-width="1" />
+      <text x="24" y="16" class="font-hud" font-size="11" font-weight="900" fill="#00ffff" letter-spacing="1.5">SOFTWARE ENGINEER</text>
 
-      <text x="0" y="56" class="font-p3r" font-size="21" font-weight="900" fill="#ffffff" letter-spacing="1">IN SEARCH OF NEW CHALLENGES</text>
-      <text x="0" y="78" class="font-hud" font-size="12" font-weight="700" fill="#00d2ff">{esc(user['university'])}</text>
+      <text x="4" y="52" class="font-p3r" font-size="21" font-weight="900" fill="#ffffff" letter-spacing="1">IN SEARCH OF NEW CHALLENGES</text>
+      <text x="4" y="74" class="font-hud" font-size="11.5" font-weight="700" fill="#00d2ff">{esc(user['university'])}</text>
 
-      <g transform="translate(0, 102)">
-        <text class="font-body" font-size="12.5" fill="#cbe3f7">
+      <g transform="translate(4, 96)">
+        <text class="font-body" font-size="12" fill="#cbe3f7">
           <tspan x="0" dy="0">Specialized in Java &amp; Spring Boot microservices, distributed architectures,</tspan>
-          <tspan x="0" dy="20">Node.js, and high-performance mobile applications with React Native.</tspan>
+          <tspan x="0" dy="19">Node.js, and high-performance mobile applications with React Native.</tspan>
         </text>
       </g>
 
-      <!-- New Latin Motto in gold accent -->
-      <g transform="translate(0, 154)">
-        <polygon points="-6,-2 460,-2 448,24 -18,24" fill="#041834" stroke="#00d2ff" stroke-width="0.8" transform="skewX(-14)" />
-        <text x="10" y="15" class="font-hud" font-size="10.5" font-weight="800" fill="#e6ff00" letter-spacing="0.5">
-          MOTTO: <tspan fill="#ffffff">{esc(user['motto'])}</tspan>
+      <!-- Motto Panel (Safely separated with its own dedicated box and clear padding) -->
+      <g transform="translate(4, 150)">
+        <polygon points="12,0 435,0 423,32 0,32" fill="#04162e" fill-opacity="0.9" stroke="#00d2ff" stroke-width="1" />
+        <text x="18" y="14" class="font-hud" font-size="9.5" font-weight="800" fill="#00ffff" letter-spacing="1">MOTTO</text>
+        <text x="18" y="26" class="font-hud" font-size="10" font-weight="700" fill="#e6ff00">
+          {esc(user['motto'])}
         </text>
       </g>
     </g>
 
-    <!-- Right Column: 3 Strategic Floating Highlight Cards -->
-    <g transform="translate(480, 16)">
+    <!-- Right Column: 3 Distinct Highlight Cards with P3R Vector Icons -->
+    <g transform="translate(480, 10)">
       <!-- Highlight 1: Academic -->
       <g transform="translate(0, 0)">
-        <polygon points="0,0 390,0 378,48 -12,48" fill="#052144" stroke="#00d2ff" stroke-width="1" transform="skewX(-12)" />
-        <text x="18" y="20" class="font-hud" font-size="11" font-weight="800" fill="#e6ff00">🥇 ACADEMIC EXCELLENCE (GPA 4.93 / 5.0)</text>
-        <text x="18" y="38" class="font-body" font-size="11" fill="#cde2f5">Top UPB Honor Scholarship recipient (Term GPAs 4.86 &amp; 4.93 / 5.0).</text>
+        <polygon points="14,0 395,0 383,48 2,48" fill="#052144" fill-opacity="0.85" stroke="#00d2ff" stroke-width="1" />
+        {p3r_icon("medal", x=16, y=14, size=18)}
+        <text x="42" y="20" class="font-hud" font-size="11" font-weight="800" fill="#e6ff00">ACADEMIC EXCELLENCE (GPA 4.93 / 5.0)</text>
+        <text x="42" y="38" class="font-body" font-size="11" fill="#cde2f5">Top UPB Honor Scholarship recipient (GPAs 4.86 &amp; 4.93 / 5.0).</text>
       </g>
 
       <!-- Highlight 2: ICPC -->
       <g transform="translate(0, 58)">
-        <polygon points="0,0 390,0 378,48 -12,48" fill="#052144" stroke="#00d2ff" stroke-width="1" transform="skewX(-12)" />
-        <text x="18" y="20" class="font-hud" font-size="11" font-weight="800" fill="#00e5ff">🏆 2x ICPC REGIONAL FINALIST</text>
-        <text x="18" y="38" class="font-body" font-size="11" fill="#cde2f5">South America–North Finals (2024 &amp; 2026) in C++ &amp; Java.</text>
+        <polygon points="14,0 395,0 383,48 2,48" fill="#052144" fill-opacity="0.85" stroke="#00d2ff" stroke-width="1" />
+        {p3r_icon("trophy", x=16, y=14, size=18)}
+        <text x="42" y="20" class="font-hud" font-size="11" font-weight="800" fill="#00e5ff">2x ICPC REGIONAL FINALIST</text>
+        <text x="42" y="38" class="font-body" font-size="11" fill="#cde2f5">South America–North Finals (2024 &amp; 2026) in C++ &amp; Java.</text>
       </g>
 
       <!-- Highlight 3: AI Research -->
       <g transform="translate(0, 116)">
-        <polygon points="0,0 390,0 378,48 -12,48" fill="#052144" stroke="#00d2ff" stroke-width="1" transform="skewX(-12)" />
-        <text x="18" y="20" class="font-hud" font-size="11" font-weight="800" fill="#00e5ff">🔬 REDCOLSI NATIONAL FINALIST</text>
-        <text x="18" y="38" class="font-body" font-size="11" fill="#cde2f5">Lead researcher on SEMPIA: AI &amp; Gamified Virtual Judge.</text>
+        <polygon points="14,0 395,0 383,48 2,48" fill="#052144" fill-opacity="0.85" stroke="#00d2ff" stroke-width="1" />
+        {p3r_icon("atom", x=16, y=14, size=18)}
+        <text x="42" y="20" class="font-hud" font-size="11" font-weight="800" fill="#00e5ff">REDCOLSI NATIONAL FINALIST</text>
+        <text x="42" y="38" class="font-body" font-size="11" fill="#cde2f5">Lead researcher on SEMPIA: AI &amp; Gamified Virtual Judge.</text>
       </g>
     </g>
   </g>
@@ -319,10 +361,11 @@ def gen_about_panel_svg(cfg):
 
 def gen_project_card_svg(p):
     """
-    Generates an individual floating slanted P3R mission tactical card.
-    Transparent canvas with sleek angled cuts matching the new aesthetic.
+    Floating slanted P3R mission card.
+    Safe margins: Button is completely enclosed inside the card boundary,
+    zero text overlap, zero left-edge clipping.
     """
-    w, h = 900, 112
+    w, h = 900, 118
     p_id = p["id"]
     name = p["name"]
     tag = p["tag"]
@@ -336,48 +379,51 @@ def gen_project_card_svg(p):
   <defs>
     <style>
       {p3r_base_styles()}
-      .card-glow:hover {{ filter: drop-shadow(0 0 8px #00d2ff); }}
+      .card-hover:hover {{ filter: drop-shadow(0 0 8px #00d2ff); }}
     </style>
   </defs>
 
-  <g class="card-glow" transform="translate(10, 0)">
-    <!-- Floating Slanted Glass Card -->
-    <polygon points="0,0 870,0 850,{h} -20,{h}" fill="#04152c" fill-opacity="0.75" stroke="#00d2ff" stroke-width="1.2" stroke-opacity="0.4" transform="skewX(-12)" />
+  <g class="card-hover">
+    <!-- Main Card Body (Explicit slanted points: Left-most point is x=6 > 0, Right-most is x=885 <= 900) -->
+    <polygon points="26,2 885,2 865,{h-2} 6,{h-2}" fill="#04152c" fill-opacity="0.85" stroke="#00d2ff" stroke-width="1.2" stroke-opacity="0.45" />
     
     <!-- Left Tactical Identifier Banner -->
-    <polygon points="-20,0 105,0 85,{h} -40,{h}" fill="#00356b" transform="skewX(-12)" />
-    <polygon points="101,0 107,0 87,{h} 81,{h}" fill="#00d2ff" transform="skewX(-12)" opacity="0.9" />
+    <polygon points="26,2 110,2 90,{h-2} 6,{h-2}" fill="#00356b" />
+    <polygon points="106,2 112,2 92,{h-2} 86,{h-2}" fill="#00d2ff" opacity="0.9" />
 
     <!-- Mission Number Display -->
-    <g transform="translate(20, 42)">
+    <g transform="translate(24, 44)">
       <text class="font-hud" font-size="10" font-weight="700" fill="#00d2ff" letter-spacing="1">TACTIC</text>
-      <text class="font-p3r" font-size="32" font-weight="900" fill="#ffffff" y="32">{esc(p_id)}</text>
+      <text class="font-p3r" font-size="34" font-weight="900" fill="#ffffff" y="34">{esc(p_id)}</text>
     </g>
 
     <!-- Main Mission Details -->
-    <g transform="translate(142, 28)">
+    <g transform="translate(136, 26)">
+      <!-- Row 1: Name and Tag -->
       <g>
-        <text class="font-p3r" font-size="18" font-weight="900" fill="#ffffff" letter-spacing="1">{esc(name)}</text>
-        <rect x="490" y="-15" width="160" height="20" fill="#002d5a" stroke="#00d2ff" stroke-width="0.8" transform="skewX(-12)" rx="2" />
-        <text x="570" y="-1" text-anchor="middle" class="font-hud" font-size="9.5" font-weight="800" fill="#00ffff" letter-spacing="1">{esc(tag)}</text>
+        <text class="font-p3r" font-size="17" font-weight="900" fill="#ffffff" letter-spacing="1">{esc(name)}</text>
+        <polygon points="460,-15 615,-15 605,7 450,7" fill="#002d5a" stroke="#00d2ff" stroke-width="0.8" />
+        <text x="532" y="-1" text-anchor="middle" class="font-hud" font-size="9.5" font-weight="800" fill="#00ffff" letter-spacing="1">{esc(tag)}</text>
       </g>
 
-      <g transform="translate(0, 22)">
+      <!-- Row 2: Role & Stack -->
+      <g transform="translate(0, 24)">
         <text class="font-hud" font-size="11" font-weight="700" fill="#e6ff00">ROLE: <tspan fill="#ffffff">{esc(role)}</tspan></text>
-        <text x="280" y="0" class="font-hud" font-size="11" font-weight="600" fill="#55d4ff">STACK: <tspan fill="#b8dcfe">{esc(tech_chips)}</tspan></text>
+        <text x="270" y="0" class="font-hud" font-size="11" font-weight="600" fill="#55d4ff">STACK: <tspan fill="#b8dcfe">{esc(tech_chips)}</tspan></text>
       </g>
 
-      <g transform="translate(0, 44)">
+      <!-- Row 3: Description -->
+      <g transform="translate(0, 48)">
         <text class="font-body" font-size="12" fill="#cadfed">
-          {esc(desc[:120])}{"..." if len(desc) > 120 else ""}
+          {esc(desc[:115])}{"..." if len(desc) > 115 else ""}
         </text>
       </g>
     </g>
 
-    <!-- Right Interaction Button 'OPEN ❯' -->
-    <g transform="translate(790, 38)">
-      <polygon points="0,0 72,0 60,36 -12,36" fill="#00488f" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-14)" />
-      <text x="30" y="23" text-anchor="middle" class="font-hud" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1.5">OPEN ❯</text>
+    <!-- Right Interaction Button 'OPEN ❯' (Comfortably inside the card boundary: 760 + 85 = 845 < 865) -->
+    <g transform="translate(760, 40)">
+      <polygon points="12,0 90,0 78,38 0,38" fill="#00488f" stroke="#00d2ff" stroke-width="1.2" />
+      <text x="45" y="24" text-anchor="middle" class="font-hud" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1.5">OPEN ❯</text>
     </g>
   </g>
 </svg>
@@ -386,8 +432,8 @@ def gen_project_card_svg(p):
 
 def gen_skills_svg(cfg):
     """
-    Generates the minimalist, focused technical arsenal affinities sheet.
-    4 clean columns, transparent floating canvas.
+    Focused, minimalist technical skills sheet.
+    Pure vector iconography (no emojis), transparent floating canvas.
     """
     skills = cfg["skills"]
     w, h = 900, 240
@@ -399,7 +445,7 @@ def gen_skills_svg(cfg):
     for i, s in enumerate(skills):
         cx = 20 + i * col_w
         cat = s["category"]
-        icon = s.get("icon", "⚡")
+        icon_type = s.get("icon_type", "backend")
         items = s["items"]
 
         item_tags = []
@@ -407,17 +453,18 @@ def gen_skills_svg(cfg):
             iy = 56 + j * 30
             item_tags.append(f"""
           <g transform="translate(6, {iy})">
-            <polygon points="0,0 {col_w-24},0 {col_w-32},24 -8,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" transform="skewX(-10)" />
-            <circle cx="6" cy="12" r="2.5" fill="#00ffff" />
-            <text x="16" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">{esc(itm)}</text>
+            <polygon points="8,0 {col_w-16},0 {col_w-24},24 0,24" fill="#051c38" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.35" stroke-width="0.8" />
+            <circle cx="10" cy="12" r="2.5" fill="#00ffff" />
+            <text x="20" y="16" class="font-hud" font-size="11" font-weight="600" fill="#e8f3ff">{esc(itm)}</text>
           </g>
             """)
 
         col_svg = f"""
       <g transform="translate({cx}, 10)">
-        <polygon points="-6,-2 {col_w-18},-2 {col_w-28},30 -16,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-12)" />
-        <text x="6" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
-          {icon} {esc(cat)}
+        <polygon points="8,-2 {col_w-10},-2 {col_w-20},30 -2,30" fill="#00356b" stroke="#00d2ff" stroke-width="1.2" />
+        {p3r_icon(icon_type, x=8, y=5, size=18)}
+        <text x="32" y="19" class="font-hud" font-size="10.5" font-weight="900" fill="#ffffff" letter-spacing="1">
+          {esc(cat)}
         </text>
         {''.join(item_tags)}
       </g>
@@ -439,7 +486,10 @@ def gen_skills_svg(cfg):
     return svg
 
 def gen_trophies_svg(cfg):
-    """Generates the minimalist, floating Honors & Awards showcase."""
+    """
+    Honors & Awards showcase.
+    Pure vector iconography (no emojis), strictly positive coordinates (no left cut).
+    """
     trophies = cfg["trophies"]
     w, h = 900, 160
     
@@ -450,14 +500,17 @@ def gen_trophies_svg(cfg):
         title = t["title"]
         year = t["year"]
         org = t["org"]
+        icon_type = t.get("icon_type", "medal")
         
         cards.append(f"""
-      <g transform="translate(24, {y})">
-        <polygon points="-8,0 850,0 838,{card_h} -20,{card_h}" fill="#041936" fill-opacity="0.8" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" transform="skewX(-14)" />
-        <rect x="0" y="8" width="5" height="26" fill="#00d2ff" />
-        <text x="18" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">{esc(title)}</text>
-        <text x="360" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[{esc(year)}]</text>
-        <text x="500" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">{esc(org)}</text>
+      <g transform="translate(16, {y})">
+        <!-- Strictly positive coordinates: Left edge is x=8 > 0 -->
+        <polygon points="18,0 864,0 854,{card_h} 8,{card_h}" fill="#041936" fill-opacity="0.85" stroke="#00d2ff" stroke-opacity="0.5" stroke-width="1" />
+        <rect x="18" y="8" width="5" height="26" fill="#00d2ff" />
+        {p3r_icon(icon_type, x=30, y=11, size=18)}
+        <text x="56" y="26" class="font-p3r" font-size="14.5" fill="#ffffff" letter-spacing="0.5">{esc(title)}</text>
+        <text x="380" y="26" class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">[{esc(year)}]</text>
+        <text x="510" y="26" class="font-hud" font-size="11.5" fill="#75c2ff">{esc(org)}</text>
       </g>
         """)
 
@@ -477,35 +530,32 @@ def gen_trophies_svg(cfg):
 
 def gen_contact_button_svg(c):
     """
-    Generates an individual slanted P3R Social Link button with authentic vector logos.
+    Individual slanted P3R Social Link button with authentic vector logos.
+    Strictly positive coordinates: zero left-edge clipping.
     """
-    w, h = 200, 48
+    w, h = 210, 50
     lbl = c["label"]
     
-    # Vector paths for brand logos
     if lbl == "LINKEDIN":
         accent = "#0077b5"
-        # Authentic LinkedIn 'in' logo
         icon_path = """
-        <g transform="translate(22, 14) scale(0.85)">
+        <g transform="translate(30, 16) scale(0.85)">
           <path d="M0,0 H4 V14 H0 Z M2, -3.5 C0.7,-3.5 0,-4.4 0,-5.4 C0,-6.5 0.7,-7.3 2,-7.3 C3.3,-7.3 4,-6.5 4,-5.4 C4,-4.4 3.3,-3.5 2,-3.5 Z" fill="#ffffff" />
           <path d="M7,0 H11 V2.2 C11.6,1.2 12.8,0 14.8,0 C18.2,0 19.5,2.2 19.5,6.5 V14 H15.5 V7.2 C15.5,5.2 14.8,4 13.2,4 C11.8,4 11,5.1 11,6.8 V14 H7 Z" fill="#ffffff" />
         </g>
         """
     elif lbl == "CREDLY":
         accent = "#ff6b00"
-        # Credly badge / verified star
         icon_path = """
-        <g transform="translate(26, 24) scale(0.9)">
+        <g transform="translate(34, 26) scale(0.9)">
           <polygon points="0,-10 6,-8 10,-3 9,4 5,9 0,11 -5,9 -9,4 -10,-3 -6,-8" fill="#ff6b00" />
           <polyline points="-3,0 -1,3 4,-3" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </g>
         """
     else: # EMAIL
         accent = "#00d2ff"
-        # Mail envelope
         icon_path = """
-        <g transform="translate(20, 16) scale(0.9)">
+        <g transform="translate(28, 18) scale(0.9)">
           <rect x="0" y="0" width="18" height="13" rx="2" fill="none" stroke="#00ffff" stroke-width="1.8" />
           <polyline points="1,1 9,8 17,1" fill="none" stroke="#00ffff" stroke-width="1.8" />
         </g>
@@ -519,10 +569,11 @@ def gen_contact_button_svg(c):
     </style>
   </defs>
   <g class="btn-hover">
-    <polygon points="-8,2 {w-10},2 {w-22},{h-2} -20,{h-2}" fill="#04162e" stroke="{accent}" stroke-width="1.5" transform="skewX(-14)" />
-    <polygon points="-8,2 20,2 8,{h-2} -20,{h-2}" fill="{accent}" transform="skewX(-14)" />
+    <!-- Strictly positive coordinates: Left-most point is x=8 > 0 -->
+    <polygon points="20,2 204,2 192,48 8,48" fill="#04162e" stroke="{accent}" stroke-width="1.5" />
+    <polygon points="20,2 40,2 28,48 8,48" fill="{accent}" />
     {icon_path}
-    <text x="{w/2 + 16}" y="{h/2 + 5}" text-anchor="middle" class="font-p3r" font-size="13.5" font-weight="900" fill="#ffffff" letter-spacing="1.5">
+    <text x="122" y="30" text-anchor="middle" class="font-p3r" font-size="13.5" font-weight="900" fill="#ffffff" letter-spacing="1.5">
       {esc(lbl)}
     </text>
   </g>
@@ -532,17 +583,17 @@ def gen_contact_button_svg(c):
 
 def gen_footer_svg(cfg):
     """
-    Generates a minimalist, floating P3R water footer with the Latin motto.
-    Zero heavy background boxes: transparent canvas with delicate floating caustics.
+    Persona 3 Reload footer.
+    Motto box is 740px wide so the Latin phrase never overflows,
+    with strictly positive coordinates.
     """
-    w, h = 900, 96
+    w, h = 900, 100
     user = cfg["user"]
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Persona 3 Reload Footer">
   <defs>
     <style>
       {p3r_base_styles()}
-      .wave-f1 {{ animation: waveDrift 8s ease-in-out infinite alternate; }}
       .b-f1 {{ animation: bubbleRise1 4s ease-in infinite; }}
       .b-f2 {{ animation: bubbleRise2 5s ease-in infinite 1.5s; }}
     </style>
@@ -555,14 +606,13 @@ def gen_footer_svg(cfg):
   </defs>
 
   <g>
-    <!-- Delicate Floating Bubbles -->
     <g transform="translate(180, 80)" class="b-f1"><circle r="3.5" fill="#00ffff" opacity="0.6" /></g>
     <g transform="translate(720, 80)" class="b-f2"><circle r="4" fill="#00d2ff" opacity="0.5" /></g>
 
-    <!-- Floating Latin Motto -->
-    <g transform="translate({w/2}, 42)">
-      <polygon points="-310,-15 310,-15 295,17 -325,17" fill="#041834" fill-opacity="0.85" stroke="#00d2ff" stroke-width="1" transform="skewX(-14)" />
-      <text text-anchor="middle" class="font-p3r" font-size="12.5" font-weight="900" fill="#ffffff" letter-spacing="2" y="2">
+    <!-- Motto Box: 740px wide, centered at x=450, completely enclosing the 540px phrase -->
+    <g transform="translate({w/2}, 38)">
+      <polygon points="-370,-16 370,-16 355,18 -385,18" fill="#041834" fill-opacity="0.9" stroke="#00d2ff" stroke-width="1" />
+      <text text-anchor="middle" class="font-p3r" font-size="11" font-weight="900" fill="#ffffff" letter-spacing="1.5" y="2">
         {esc(user['motto'].upper())}
       </text>
       <text text-anchor="middle" class="font-hud" font-size="10" fill="#69a3d4" letter-spacing="1.5" y="32">
@@ -570,7 +620,7 @@ def gen_footer_svg(cfg):
       </text>
     </g>
 
-    <line x1="120" y1="84" x2="780" y2="84" stroke="url(#footerLineGrad)" stroke-width="1.5" />
+    <line x1="80" y1="88" x2="820" y2="88" stroke="url(#footerLineGrad)" stroke-width="1.5" />
   </g>
 </svg>
 """
@@ -580,7 +630,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     cfg = load_config()
 
-    print("[P3R] Generating Refined Persona 3 Reload SVG Suite...")
+    print("[P3R] Generating Master Persona 3 Reload SVG Suite...")
 
     # 1. Hero Banner
     hero_svg = gen_hero_svg(cfg)
@@ -643,7 +693,7 @@ def main():
         f.write(footer_svg)
     print("  ✓ Created footer.svg")
 
-    print("[P3R] All Refined Persona 3 Reload SVG assets generated successfully!")
+    print("[P3R] All Master Persona 3 Reload SVG assets generated successfully!")
 
 if __name__ == "__main__":
     main()
