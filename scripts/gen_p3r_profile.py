@@ -118,7 +118,7 @@ def gen_hero_svg(cfg):
     arcana_display = user.get("arcana", "THE CHARIOT").upper()
     status_display = user.get("status", "SYS://READY").upper()
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{esc(name_display)} - Persona 3 Reload Profile">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{esc(name_display)} - Persona 3 Reload Profile">
   <defs>
     <style>
       {p3r_base_styles()}
@@ -159,7 +159,7 @@ def gen_hero_svg(cfg):
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
     <mask id="artMask">
-      <rect x="0" y="0" width="642" height="{h}" fill="url(#blendMaskGrad)" />
+      <rect x="-20" y="-20" width="672" height="{h+40}" fill="url(#blendMaskGrad)" />
     </mask>
 
     <linearGradient id="cyanRibbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -180,7 +180,7 @@ def gen_hero_svg(cfg):
     <!-- Authentic Persona 3 Reload Makoto Yuki Submerged Artwork with Ocean Motion -->
     <g mask="url(#artMask)">
       <g class="ocean-motion">
-        <image href="data:image/jpeg;base64,{b64_img}" x="-15" y="-15" width="672" height="{h+30}" preserveAspectRatio="xMinYMid slice" />
+        <image href="data:image/jpeg;base64,{b64_img}" xlink:href="data:image/jpeg;base64,{b64_img}" x="-15" y="-15" width="672" height="{h+30}" preserveAspectRatio="xMinYMid slice" />
       </g>
     </g>
 
@@ -241,52 +241,46 @@ def gen_hero_svg(cfg):
     return svg
 
 def gen_section_header_svg(idx, title, subtitle):
-    """Generates an iconic slanted P3R menu section banner."""
-    w, h = 900, 68
+    """
+    Generates an iconic, floating Persona 3 Reload section title.
+    Zero background boxes or full-width lines: purely stylized slanted typography
+    matching the in-game menu typography.
+    """
+    w, h = 900, 48
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{esc(title)}">
   <defs>
     <style>
       {p3r_base_styles()}
+      .title-glow {{
+        filter: drop-shadow(0 0 6px rgba(0, 210, 255, 0.7));
+      }}
     </style>
-    <linearGradient id="secGrad_{idx}" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00d2ff" />
-      <stop offset="70%" stop-color="#0066cc" />
-      <stop offset="100%" stop-color="#04142b" />
+    <linearGradient id="titleLineGrad_{idx}" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.9" />
+      <stop offset="45%" stop-color="#0077cc" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0" />
     </linearGradient>
-    <clipPath id="secClip_{idx}">
-      <rect width="{w}" height="{h}" rx="8" />
-    </clipPath>
   </defs>
 
-  <g clip-path="url(#secClip_{idx})">
-    <rect width="{w}" height="{h}" fill="#040e1f" />
-    
-    <!-- Slanted Accent Trapeze -->
-    <polygon points="-20,0 480,0 430,{h} -20,{h}" fill="url(#secGrad_{idx})" transform="skewX(-15)" />
-    
-    <!-- Neon Slashes -->
-    <line x1="470" y1="0" x2="420" y2="{h}" stroke="#ffffff" stroke-width="2" opacity="0.8" transform="skewX(-15)" />
-    <line x1="482" y1="0" x2="432" y2="{h}" stroke="#00d2ff" stroke-width="1.5" opacity="0.6" transform="skewX(-15)" />
-
-    <!-- Index Tag -->
-    <g transform="translate(34, 43)">
-      <text class="font-hud" font-size="20" font-weight="900" fill="#020814">[{esc(idx)}]</text>
+  <g transform="translate(10, 0)">
+    <!-- Slanted Neon Slash Accents -->
+    <g transform="translate(16, 2) skewX(-16)">
+      <polygon points="0,6 10,6 2,36 -8,36" fill="#00d2ff" />
+      <polygon points="14,6 20,6 12,36 6,36" fill="#00ffff" />
     </g>
 
-    <!-- Main Title -->
-    <g transform="translate(100, 44)">
-      <text class="font-p3r" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="2">{esc(title)}</text>
+    <!-- Floating Slanted Title (Matching P3R Menu Screen) -->
+    <g transform="translate(48, 2) skewX(-16)">
+      <!-- 3D Shadow for legibility on dark & light backgrounds -->
+      <text x="3" y="31" class="font-p3r" font-size="28" fill="#001433" letter-spacing="2.5">{esc(title)}</text>
+      <!-- Main Electric Cyan Text with Glow -->
+      <text x="0" y="28" class="font-p3r title-glow" font-size="28" fill="#00d2ff" letter-spacing="2.5">{esc(title)}</text>
+      <!-- Pure White Highlight Overlay -->
+      <text x="0" y="28" class="font-p3r" font-size="28" fill="#ffffff" opacity="0.35" letter-spacing="2.5">{esc(title)}</text>
     </g>
 
-    <!-- Subtitle / Meta HUD -->
-    <g transform="translate(480, 43)">
-      <text class="font-hud" font-size="11" font-weight="600" fill="#7ea7d0" letter-spacing="1.5">{esc(subtitle)}</text>
-    </g>
-
-    <!-- Frame Border -->
-    <rect width="{w}" height="{h}" fill="none" stroke="#00d2ff" stroke-opacity="0.25" stroke-width="1" rx="8" />
-    <!-- Left corner accent -->
-    <line x1="0" y1="0" x2="0" y2="{h}" stroke="#00d2ff" stroke-width="4" />
+    <!-- Subtle Tapered Glow Line underneath that fades out to the right -->
+    <line x1="20" y1="42" x2="440" y2="42" stroke="url(#titleLineGrad_{idx})" stroke-width="2" />
   </g>
 </svg>
 """
