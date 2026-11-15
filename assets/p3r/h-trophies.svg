@@ -17,11 +17,6 @@
       50% { r: 75px; opacity: 0.4; stroke-width: 1.5; }
       100% { r: 140px; opacity: 0; stroke-width: 0.5; }
     }
-    @keyframes ripplePulse2 {
-      0% { r: 5px; opacity: 0.8; stroke-width: 2; }
-      50% { r: 90px; opacity: 0.3; stroke-width: 1.2; }
-      100% { r: 180px; opacity: 0; stroke-width: 0.5; }
-    }
     @keyframes bubbleRise1 {
       0% { transform: translateY(0px) scale(0.7); opacity: 0; }
       20% { opacity: 0.8; }
@@ -34,14 +29,6 @@
       85% { opacity: 0.5; }
       100% { transform: translateY(-210px) scale(1.4); opacity: 0; }
     }
-    @keyframes dialSpinCW {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes dialSpinCCW {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
     @keyframes cyanGlow {
       0%, 100% { filter: drop-shadow(0 0 4px #00d2ff); opacity: 0.9; }
       50% { filter: drop-shadow(0 0 12px #00ffff); opacity: 1; }
@@ -49,10 +36,6 @@
     @keyframes blinkCursor {
       0%, 49% { opacity: 1; }
       50%, 100% { opacity: 0; }
-    }
-    @keyframes gaugeFill {
-      0% { width: 0%; }
-      100% { width: 100%; }
     }
     .font-hud {
       font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Roboto Mono', Consolas, monospace;
@@ -82,23 +65,17 @@
   </defs>
 
   <g transform="translate(10, 0)">
-    <!-- Slanted Neon Slash Accents -->
     <g transform="translate(16, 2) skewX(-16)">
       <polygon points="0,6 10,6 2,36 -8,36" fill="#00d2ff" />
       <polygon points="14,6 20,6 12,36 6,36" fill="#00ffff" />
     </g>
 
-    <!-- Floating Slanted Title (Matching P3R Menu Screen) -->
     <g transform="translate(48, 2) skewX(-16)">
-      <!-- 3D Shadow for legibility on dark & light backgrounds -->
       <text x="3" y="31" class="font-p3r" font-size="28" fill="#001433" letter-spacing="2.5">TROPHIES // HONORS</text>
-      <!-- Main Electric Cyan Text with Glow -->
       <text x="0" y="28" class="font-p3r title-glow" font-size="28" fill="#00d2ff" letter-spacing="2.5">TROPHIES // HONORS</text>
-      <!-- Pure White Highlight Overlay -->
       <text x="0" y="28" class="font-p3r" font-size="28" fill="#ffffff" opacity="0.35" letter-spacing="2.5">TROPHIES // HONORS</text>
     </g>
 
-    <!-- Subtle Tapered Glow Line underneath that fades out to the right -->
     <line x1="20" y1="42" x2="440" y2="42" stroke="url(#titleLineGrad_04)" stroke-width="2" />
   </g>
 </svg>

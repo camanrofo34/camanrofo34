@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 136" width="900" height="136" role="img" aria-label="PHARMACONSULTAS ENTERPRISE">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 112" width="900" height="112" role="img" aria-label="TERRAFY — PLANT GROWTH ANALYTICS">
   <defs>
     <style>
       
@@ -17,11 +17,6 @@
       50% { r: 75px; opacity: 0.4; stroke-width: 1.5; }
       100% { r: 140px; opacity: 0; stroke-width: 0.5; }
     }
-    @keyframes ripplePulse2 {
-      0% { r: 5px; opacity: 0.8; stroke-width: 2; }
-      50% { r: 90px; opacity: 0.3; stroke-width: 1.2; }
-      100% { r: 180px; opacity: 0; stroke-width: 0.5; }
-    }
     @keyframes bubbleRise1 {
       0% { transform: translateY(0px) scale(0.7); opacity: 0; }
       20% { opacity: 0.8; }
@@ -34,14 +29,6 @@
       85% { opacity: 0.5; }
       100% { transform: translateY(-210px) scale(1.4); opacity: 0; }
     }
-    @keyframes dialSpinCW {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes dialSpinCCW {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
     @keyframes cyanGlow {
       0%, 100% { filter: drop-shadow(0 0 4px #00d2ff); opacity: 0.9; }
       50% { filter: drop-shadow(0 0 12px #00ffff); opacity: 1; }
@@ -49,10 +36,6 @@
     @keyframes blinkCursor {
       0%, 49% { opacity: 1; }
       50%, 100% { opacity: 0; }
-    }
-    @keyframes gaugeFill {
-      0% { width: 0%; }
-      100% { width: 100%; }
     }
     .font-hud {
       font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Roboto Mono', Consolas, monospace;
@@ -70,64 +53,48 @@
       }
     }
     
-      .card-glow:hover { filter: drop-shadow(0 0 10px #00d2ff); }
+      .card-glow:hover { filter: drop-shadow(0 0 8px #00d2ff); }
     </style>
-    <linearGradient id="cardGrad_02" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05152d" />
-      <stop offset="60%" stop-color="#081e3d" />
-      <stop offset="100%" stop-color="#0a264e" />
-    </linearGradient>
-    <clipPath id="cardClip_02">
-      <rect width="900" height="136" rx="10" />
-    </clipPath>
   </defs>
 
-  <g clip-path="url(#cardClip_02)">
-    <!-- Card Canvas -->
-    <rect width="900" height="136" fill="url(#cardGrad_02)" />
+  <g class="card-glow" transform="translate(10, 0)">
+    <!-- Floating Slanted Glass Card -->
+    <polygon points="0,0 870,0 850,112 -20,112" fill="#04152c" fill-opacity="0.75" stroke="#00d2ff" stroke-width="1.2" stroke-opacity="0.4" transform="skewX(-12)" />
     
-    <!-- Left Tactical Slanted Identifier Box -->
-    <polygon points="-20,0 120,0 95,136 -20,136" fill="#002d62" transform="skewX(-14)" />
-    <polygon points="116,0 122,0 97,136 91,136" fill="#00d2ff" transform="skewX(-14)" opacity="0.9" />
+    <!-- Left Tactical Identifier Banner -->
+    <polygon points="-20,0 105,0 85,112 -40,112" fill="#00356b" transform="skewX(-12)" />
+    <polygon points="101,0 107,0 87,112 81,112" fill="#00d2ff" transform="skewX(-12)" opacity="0.9" />
 
     <!-- Mission Number Display -->
-    <g transform="translate(24, 52)">
+    <g transform="translate(20, 42)">
       <text class="font-hud" font-size="10" font-weight="700" fill="#00d2ff" letter-spacing="1">TACTIC</text>
-      <text class="font-p3r" font-size="34" font-weight="900" fill="#ffffff" y="34">02</text>
+      <text class="font-p3r" font-size="32" font-weight="900" fill="#ffffff" y="32">02</text>
     </g>
 
     <!-- Main Mission Details -->
-    <g transform="translate(150, 32)">
-      <!-- Project Title & Category Tag -->
+    <g transform="translate(142, 28)">
       <g>
-        <text class="font-p3r" font-size="18.5" font-weight="900" fill="#ffffff" letter-spacing="1">PHARMACONSULTAS ENTERPRISE</text>
-        <rect x="520" y="-16" width="160" height="22" fill="#052952" stroke="#00d2ff" stroke-width="1" transform="skewX(-12)" rx="2" />
-        <text x="600" y="0" text-anchor="middle" class="font-hud" font-size="10" font-weight="800" fill="#00ffff" letter-spacing="1">FULL-STACK // PRODUCTION</text>
+        <text class="font-p3r" font-size="18" font-weight="900" fill="#ffffff" letter-spacing="1">TERRAFY — PLANT GROWTH ANALYTICS</text>
+        <rect x="490" y="-15" width="160" height="20" fill="#002d5a" stroke="#00d2ff" stroke-width="0.8" transform="skewX(-12)" rx="2" />
+        <text x="570" y="-1" text-anchor="middle" class="font-hud" font-size="9.5" font-weight="800" fill="#00ffff" letter-spacing="1">MODELING // ANALYTICS</text>
       </g>
 
-      <!-- Role & Tech Stack Line -->
-      <g transform="translate(0, 24)">
-        <text class="font-hud" font-size="11.5" font-weight="700" fill="#e6ff00">ROLE: <tspan fill="#ffffff">Full-Stack Developer • 2025–2026</tspan></text>
-        <text x="320" y="0" class="font-hud" font-size="11" font-weight="600" fill="#55d4ff">STACK: <tspan fill="#b8dcfe">Node.js  ·  Angular  ·  React Native  ·  MySQL  ·  Google Play</tspan></text>
+      <g transform="translate(0, 22)">
+        <text class="font-hud" font-size="11" font-weight="700" fill="#e6ff00">ROLE: <tspan fill="#ffffff">Scientific Modeling Server</tspan></text>
+        <text x="280" y="0" class="font-hud" font-size="11" font-weight="600" fill="#55d4ff">STACK: <tspan fill="#b8dcfe">Python  ·  Mathematical Modeling  ·  TypeScript  ·  REST APIs</tspan></text>
       </g>
 
-      <!-- Description Line (Clean wrap) -->
-      <g transform="translate(0, 48)">
-        <text class="font-body" font-size="12.5" fill="#cadfed">
-          Comprehensive pharmacy ecosystem: drug commerce, appointment scheduling, digital clinical records, and family subsc...
+      <g transform="translate(0, 44)">
+        <text class="font-body" font-size="12" fill="#cadfed">
+          Data-driven hydroponic plant-growth analysis and simulation platform powered by mathematical models, environmental telem...
         </text>
       </g>
     </g>
 
-    <!-- Right Interaction Button 'ENGAGE' -->
-    <g transform="translate(805, 50)">
-      <polygon points="0,0 72,0 60,38 -12,38" fill="#0052a3" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-14)" />
-      <text x="30" y="24" text-anchor="middle" class="font-hud" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1.5">OPEN ❯</text>
+    <!-- Right Interaction Button 'OPEN ❯' -->
+    <g transform="translate(790, 38)">
+      <polygon points="0,0 72,0 60,36 -12,36" fill="#00488f" stroke="#00d2ff" stroke-width="1.2" transform="skewX(-14)" />
+      <text x="30" y="23" text-anchor="middle" class="font-hud" font-size="12" font-weight="900" fill="#ffffff" letter-spacing="1.5">OPEN ❯</text>
     </g>
-
-    <!-- Surrounding Frame -->
-    <rect width="900" height="136" fill="none" stroke="#00d2ff" stroke-opacity="0.25" stroke-width="1.2" rx="10" />
-    <line x1="0" y1="0" x2="6" y2="0" stroke="#00e5ff" stroke-width="4" />
-    <line x1="0" y1="136" x2="6" y2="136" stroke="#00e5ff" stroke-width="4" />
   </g>
 </svg>
