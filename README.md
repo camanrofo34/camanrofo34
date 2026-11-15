@@ -13,7 +13,7 @@
 <!-- [00] P3R HERO // WATER SPLASH HUD BANNER -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/hero.svg" width="100%" alt="Camilo Rodríguez — Persona 3 Reload Status HUD" />
+  <img src="assets/p3r/hero.svg?v=20261115" width="100%" alt="Camilo Rodríguez — Persona 3 Reload Status HUD" />
 </p>
 
 <!-- P3R TYPING STATUS SVG -->
@@ -29,11 +29,11 @@
 <!-- [01] STATUS // IDENTITY -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/h-about.svg" width="100%" alt="[01] STATUS // IDENTITY" />
+  <img src="assets/p3r/h-about.svg?v=20261115" width="100%" alt="[01] STATUS // IDENTITY" />
 </p>
 
 <p align="center">
-  <img src="assets/p3r/about.svg" width="100%" alt="Persona Status Attributes & Summary" />
+  <img src="assets/p3r/about.svg?v=20261115" width="100%" alt="Persona Status Attributes & Summary" />
 </p>
 
 <br />
@@ -42,33 +42,33 @@
 <!-- [02] TACTICS // OPERATIONS -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/h-tactics.svg" width="100%" alt="[02] TACTICS // MISSIONS" />
+  <img src="assets/p3r/h-tactics.svg?v=20261115" width="100%" alt="[02] TACTICS // MISSIONS" />
 </p>
 
 <p align="center">
   <!-- MISSION 01: SEMPIA -->
   <a href="https://github.com/camanrofo34">
-    <img src="assets/p3r/target-0.svg" width="100%" alt="TACTIC 01: SEMPIA — AI & Gamified Virtual Judge" />
+    <img src="assets/p3r/target-0.svg?v=20261115" width="100%" alt="TACTIC 01: SEMPIA — AI & Gamified Virtual Judge" />
   </a>
   <br />
   <!-- MISSION 02: PHARMACONSULTAS -->
   <a href="https://github.com/camanrofo34">
-    <img src="assets/p3r/target-1.svg" width="100%" alt="TACTIC 02: Pharmaconsultas Enterprise Ecosystem" />
+    <img src="assets/p3r/target-1.svg?v=20261115" width="100%" alt="TACTIC 02: Pharmaconsultas Enterprise Ecosystem" />
   </a>
   <br />
   <!-- MISSION 03: TERRAFY -->
   <a href="https://github.com/camanrofo34/terrafy-analytics-server">
-    <img src="assets/p3r/target-2.svg" width="100%" alt="TACTIC 03: Terrafy — Plant Growth Analytics Server" />
+    <img src="assets/p3r/target-2.svg?v=20261115" width="100%" alt="TACTIC 03: Terrafy — Plant Growth Analytics Server" />
   </a>
   <br />
   <!-- MISSION 04: GYM CRM -->
   <a href="https://github.com/camanrofo34/gym-crm-spec-driven-development">
-    <img src="assets/p3r/target-3.svg" width="100%" alt="TACTIC 04: Gym Management CRM (Spec-Driven Development)" />
+    <img src="assets/p3r/target-3.svg?v=20261115" width="100%" alt="TACTIC 04: Gym Management CRM (Spec-Driven Development)" />
   </a>
   <br />
   <!-- MISSION 05: NEXUS BATTLE IV -->
   <a href="https://github.com/camanrofo34/NEXUS-BATTLE-IV">
-    <img src="assets/p3r/target-4.svg" width="100%" alt="TACTIC 05: NEXUS BATTLE IV & Realtime Chat Engine" />
+    <img src="assets/p3r/target-4.svg?v=20261115" width="100%" alt="TACTIC 05: NEXUS BATTLE IV & Realtime Chat Engine" />
   </a>
 </p>
 
@@ -78,11 +78,11 @@
 <!-- [03] SKILLS // ARSENAL -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/h-skills.svg" width="100%" alt="[03] SKILLS // ARSENAL" />
+  <img src="assets/p3r/h-skills.svg?v=20261115" width="100%" alt="[03] SKILLS // ARSENAL" />
 </p>
 
 <p align="center">
-  <img src="assets/p3r/skills.svg" width="100%" alt="Technical Skills Arsenal" />
+  <img src="assets/p3r/skills.svg?v=20261115" width="100%" alt="Technical Skills Arsenal" />
 </p>
 
 <br />
@@ -91,11 +91,11 @@
 <!-- [04] TROPHIES // HONORS -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/h-trophies.svg" width="100%" alt="[04] TROPHIES // HONORS" />
+  <img src="assets/p3r/h-trophies.svg?v=20261115" width="100%" alt="[04] TROPHIES // HONORS" />
 </p>
 
 <p align="center">
-  <img src="assets/p3r/trophies.svg" width="100%" alt="Honors & Trophies Hall of Fame" />
+  <img src="assets/p3r/trophies.svg?v=20261115" width="100%" alt="Honors & Trophies Hall of Fame" />
 </p>
 
 <br />
@@ -126,24 +126,24 @@
 <!-- [05] S-LINK // SOCIAL COMMS -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/h-contact.svg" width="100%" alt="[05] S-LINK // NETWORK" />
+  <img src="assets/p3r/h-contact.svg?v=20261115" width="100%" alt="[05] S-LINK // NETWORK" />
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/camilo-rodriguez-62b646264" target="_blank">
-    <img src="assets/p3r/contact-linkedin.svg" height="46" alt="LinkedIn" />
+    <img src="assets/p3r/contact-linkedin.svg?v=20261115" height="46" alt="LinkedIn" />
   </a>
   <a href="https://www.credly.com/users/camilo-rodriguez.e532fd19" target="_blank">
-    <img src="assets/p3r/contact-credly.svg" height="46" alt="Credly" />
+    <img src="assets/p3r/contact-credly.svg?v=20261115" height="46" alt="Credly" />
   </a>
   <a href="mailto:camanrofo@gmail.com">
-    <img src="assets/p3r/contact-email.svg" height="46" alt="Email" />
+    <img src="assets/p3r/contact-email.svg?v=20261115" height="46" alt="Email" />
   </a>
   <a href="https://wa.me/573133475336" target="_blank">
-    <img src="assets/p3r/contact-whatsapp.svg" height="46" alt="WhatsApp" />
+    <img src="assets/p3r/contact-whatsapp.svg?v=20261115" height="46" alt="WhatsApp" />
   </a>
   <a href="https://github.com/camanrofo34">
-    <img src="assets/p3r/contact-github.svg" height="46" alt="GitHub" />
+    <img src="assets/p3r/contact-github.svg?v=20261115" height="46" alt="GitHub" />
   </a>
 </p>
 
@@ -153,5 +153,5 @@
 <!-- P3R WATER FOOTER (MEMENTO MORI // CARPE DIEM) -->
 <!-- ===================================================================== -->
 <p align="center">
-  <img src="assets/p3r/footer.svg" width="100%" alt="Persona 3 Reload Footer — Memento Mori" />
+  <img src="assets/p3r/footer.svg?v=20261115" width="100%" alt="Persona 3 Reload Footer — Memento Mori" />
 </p>
