@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 68" width="900" height="68" role="img" aria-label="TROPHIES // HONORS">
+  <defs>
+    <style>
+      
+    @keyframes waveDrift {
+      0% { transform: translateX(0px) translateY(0px); }
+      50% { transform: translateX(-35px) translateY(-5px); }
+      100% { transform: translateX(0px) translateY(0px); }
+    }
+    @keyframes waveSlow {
+      0% { transform: translateX(0px) translateY(0px) scaleY(1); }
+      50% { transform: translateX(25px) translateY(6px) scaleY(1.08); }
+      100% { transform: translateX(0px) translateY(0px) scaleY(1); }
+    }
+    @keyframes ripplePulse {
+      0% { r: 10px; opacity: 0.9; stroke-width: 2.5; }
+      50% { r: 75px; opacity: 0.4; stroke-width: 1.5; }
+      100% { r: 140px; opacity: 0; stroke-width: 0.5; }
+    }
+    @keyframes ripplePulse2 {
+      0% { r: 5px; opacity: 0.8; stroke-width: 2; }
+      50% { r: 90px; opacity: 0.3; stroke-width: 1.2; }
+      100% { r: 180px; opacity: 0; stroke-width: 0.5; }
+    }
+    @keyframes bubbleRise1 {
+      0% { transform: translateY(0px) scale(0.7); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.6; }
+      100% { transform: translateY(-160px) scale(1.2); opacity: 0; }
+    }
+    @keyframes bubbleRise2 {
+      0% { transform: translateY(0px) scale(0.9); opacity: 0; }
+      30% { opacity: 0.9; }
+      85% { opacity: 0.5; }
+      100% { transform: translateY(-210px) scale(1.4); opacity: 0; }
+    }
+    @keyframes dialSpinCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes dialSpinCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes cyanGlow {
+      0%, 100% { filter: drop-shadow(0 0 4px #00d2ff); opacity: 0.9; }
+      50% { filter: drop-shadow(0 0 12px #00ffff); opacity: 1; }
+    }
+    @keyframes blinkCursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes gaugeFill {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .font-hud {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Roboto Mono', Consolas, monospace;
+    }
+    .font-p3r {
+      font-family: 'Helvetica Neue', 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 900;
+    }
+    .font-body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, .wave-anim, .ripple-anim, .bubble-anim, .dial-anim {
+        animation: none !important;
+      }
+    }
+    
+    </style>
+    <linearGradient id="secGrad_04" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="70%" stop-color="#0066cc" />
+      <stop offset="100%" stop-color="#04142b" />
+    </linearGradient>
+    <clipPath id="secClip_04">
+      <rect width="900" height="68" rx="8" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#secClip_04)">
+    <rect width="900" height="68" fill="#040e1f" />
+    
+    <!-- Slanted Accent Trapeze -->
+    <polygon points="-20,0 480,0 430,68 -20,68" fill="url(#secGrad_04)" transform="skewX(-15)" />
+    
+    <!-- Neon Slashes -->
+    <line x1="470" y1="0" x2="420" y2="68" stroke="#ffffff" stroke-width="2" opacity="0.8" transform="skewX(-15)" />
+    <line x1="482" y1="0" x2="432" y2="68" stroke="#00d2ff" stroke-width="1.5" opacity="0.6" transform="skewX(-15)" />
+
+    <!-- Index Tag -->
+    <g transform="translate(34, 43)">
+      <text class="font-hud" font-size="20" font-weight="900" fill="#020814">[04]</text>
+    </g>
+
+    <!-- Main Title -->
+    <g transform="translate(100, 44)">
+      <text class="font-p3r" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="2">TROPHIES // HONORS</text>
+    </g>
+
+    <!-- Subtitle / Meta HUD -->
+    <g transform="translate(480, 43)">
+      <text class="font-hud" font-size="11" font-weight="600" fill="#7ea7d0" letter-spacing="1.5">AWARDS &amp; COMPETITIVE RECOGNITIONS</text>
+    </g>
+
+    <!-- Frame Border -->
+    <rect width="900" height="68" fill="none" stroke="#00d2ff" stroke-opacity="0.25" stroke-width="1" rx="8" />
+    <!-- Left corner accent -->
+    <line x1="0" y1="0" x2="0" y2="68" stroke="#00d2ff" stroke-width="4" />
+  </g>
+</svg>
